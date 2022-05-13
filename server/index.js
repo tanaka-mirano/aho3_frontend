@@ -1,8 +1,8 @@
 const compression = require('compression');
 const path = require('path');
-const express = require('vendor/autoload.php');
+const express = require('express');
 const app = express();
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 8080;
 // Gzip
 app.use(compression());
 // Run the app by serving the static files

@@ -14,7 +14,7 @@ export class HyoujiService {
     private http: HttpClient,
     //private heroesUrl = 'api/heroes';  // Web APIのURL
   ) { }
-  private hyoujiUrl = 'http://localhost:4200/app';
+  private hyoujiUrl = 'https://tranquil-crag-27137.herokuapp.com/';
   //proxy.confで設定しないときは8080にする
   //このとき、springboot側では/appでRequestMapping
 
