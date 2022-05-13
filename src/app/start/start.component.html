@@ -1,0 +1,22 @@
+<div class="title">Ready</div>
+
+<div class="ok">
+    <button class="btn05 bordercircle3" (click)="ok()"><span>Go!</span></button>
+</div>
+
+<ul>
+    <label for="start_num">開始数: </label>
+    <input id="start_num" [(ngModel)]="init_num.st_num" placeholder="終了数より小さく" />
+
+    <label for="end_num">終了数: </label>
+    <input id="end_num" [(ngModel)]="init_num.end_num" placeholder="開始数より大きく" />
+
+    <label for="bi_num">あほになる数: </label>
+    <input id="bi_num" [(ngModel)]="init_num.bi_num" placeholder="1桁" />
+
+    <label for="like_num">好きな数: </label>
+    <input id="like_num" [(ngModel)]="init_num.like_num" placeholder="1桁" />
+
+    <div class="message">※各数字は1以上で設定してください</div>
+
+</ul>

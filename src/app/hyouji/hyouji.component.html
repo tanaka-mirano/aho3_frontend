@@ -1,0 +1,37 @@
+
+
+<div class="img_hyouji" *ngIf="count!=0">
+
+    <div [class.ahoImg]="ahoCount" [class.noImg]="noCount">
+
+        <img src={{img_src}}>
+    </div>
+
+    <div [class.no]="noCount" [class.aho]="ahoCount" [class.like]="likeCount">
+
+        {{count}}
+
+    </div>
+
+    <!--
+    <div [class.heart]="heart">
+        <i class="Heart1 fas fa-heart"></i>
+        <i class="Heart2 fas fa-heart"></i>
+        <i class="Heart3 fas fa-heart"></i>
+    </div>
+-->
+
+
+    <p>音声付きでお楽しみください</p>
+</div>
+
+
+<div class="error" *ngIf="errorHappen">
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+    <span>{{error}}</span>
+    <div class="onemore">
+        <a routerLink="/start">設定しなおす</a>
+    </div>
+</div>
