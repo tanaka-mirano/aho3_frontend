@@ -40,8 +40,8 @@ export class StartComponent implements OnInit {
       .then(() => {
         // start to use LIFF's api
         //initializeApp();
-        alert("initializeAppend");
-        console.log((window as any).liff.getLanguage());
+        //alert("initializeAppend");
+        //console.log((window as any).liff.getLanguage());
       });
 
       
