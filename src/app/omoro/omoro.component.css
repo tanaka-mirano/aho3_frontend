@@ -374,7 +374,7 @@
     font-size:10vmin;
     */
 
-  font-size: clamp(30px, 11vw, 200px);
+  font-size: clamp(30px, 11vw, 100px);
   /*font-size: clamp(最小値, 基準値, 最大値);*/
   /*vm/vw/vmin/vmaxで画面サイズ変更時に文字が改行されないようにできる*/
 
