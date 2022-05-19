@@ -17,16 +17,15 @@
     <div class="comment">
         <h1>comment</h1>
 
-        <p><input type="radio"> 名前:コメント         <button>♡</button>  12  <button>→</button></p>
-        <p style="text-indent:1em"><input type="radio"> 返信者:コメント          <button>♡</button>  12  <button>→</button></p>
+        <p>名前:コメント         <button class="good" (click)="good()">♡</button> {{good_num}}  <button class="reply" (click)="reply()">→</button> <button class="delete">×</button></p>
+        
+        <p *ngIf="r_button!=0" style="text-indent:1em"> 返信者:コメント          </p>
 
         <form action="" method="post">
             <p>記入欄<br>
                 <textarea rows="5" cols="30">コメント</textarea>
             </p>
             <input type="submit" value="送信" />
-            <input type="submit" value="編集" />
-            <input type="submit" value="削除" />
         </form>
     </div>
 
