@@ -5,6 +5,8 @@
   position: relative;
   margin: 0 auto;
 
+  float:left;
+
   /*画面いっぱい表示*/
   width: 100%;
   min-height: 100vh;
@@ -18,7 +20,6 @@
 
   position:relative;
   float:right;
-  
 }
 
 /*上から振ってくる*/
