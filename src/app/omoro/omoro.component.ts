@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as internal from 'stream';
+//import * as internal from 'stream';
 import { SoundmusicService } from '../soundmusic.service';
 
 @Component({
