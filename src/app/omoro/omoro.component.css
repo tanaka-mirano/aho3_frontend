@@ -14,6 +14,13 @@
 
 }
 
+.comment{
+
+  position:relative;
+  float:right;
+  
+}
+
 /*上から振ってくる*/
 .item {
   position: absolute;
@@ -334,18 +341,6 @@
 
 
 
-  /*  
-    0% {    開始時
-    transform: translateY(-100%);
-    translateY(距離):上下(垂直方向)の移動距離の値を指定
-	}
-	100% {  終了時
-    transform: translateY(600px) rotate(1turn);
-	}
-    */
-
-
-
 }
 
 /*オモロー文字表示*/
@@ -370,7 +365,7 @@
     font-size:10vmin;
     */
 
-  font-size: clamp(30px, 11vw, 300px);
+  font-size: clamp(30px, 11vw, 200px);
   /*font-size: clamp(最小値, 基準値, 最大値);*/
   /*vm/vw/vmin/vmaxで画面サイズ変更時に文字が改行されないようにできる*/
 
@@ -397,16 +392,11 @@
 
 
 .onemore {
-
-
-
   position: absolute;
 
   top: 95%;
   left: 50%;
   transform: translate(-50%, -50%);
-
-
 }
 
 .onemore a {
@@ -424,11 +414,6 @@
   transform: rotateX(360deg);
 }
 
-
-
-
-
-
 img {
 
   left: 30%;
@@ -440,3 +425,4 @@ img {
   height: 500px;
 
 }
+
