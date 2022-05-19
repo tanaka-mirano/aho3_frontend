@@ -1,3 +1,10 @@
+.omoro_back{
+  background-color: #99cc33;
+  width: 100%;
+
+
+}
+
 .img_omoro {
 
   color: aqua;
@@ -8,7 +15,7 @@
   float:left;
 
   /*画面いっぱい表示*/
-  width: 100%;
+  width: 70%;
   min-height: 100vh;
 
   overflow: hidden;
@@ -20,6 +27,7 @@
 
   position:relative;
   float:right;
+  width: 30%;
 }
 
 /*上から振ってくる*/
