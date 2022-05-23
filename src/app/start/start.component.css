@@ -208,3 +208,8 @@ ul .message{
       position:relative;
       float: right;
   }
+
+  .reply_form{
+      position:relative;
+      margin-top:3px;
+  }
