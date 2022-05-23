@@ -3,12 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { HyoujiComponent } from './hyouji/hyouji.component';
 import { StartComponent } from './start/start.component';
 import { OmoroComponent } from './omoro/omoro.component';
+import { ReplyComponent } from './reply/reply.component';
 
 const routes: Routes = [
   { path: '', component: StartComponent},
   { path: 'start', component: StartComponent },
   { path: 'hyouji', component: HyoujiComponent },
-  { path: 'omoro', component: OmoroComponent }
+  { path: 'omoro', component: OmoroComponent },
+  { path: 'reply', component: ReplyComponent }
 ];
 
 @NgModule({
