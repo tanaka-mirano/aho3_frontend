@@ -185,3 +185,21 @@ ul .message{
         transform: scale(1, 1);
     }
 }
+
+.back{
+    background-color: #99cc33;
+    width: 100%;
+  }
+
+.start{
+    position:relative;
+    float:left;
+    width: 70%;
+}
+
+.comment{
+
+    position:relative;
+    float:right;
+    width: 30%;
+  }

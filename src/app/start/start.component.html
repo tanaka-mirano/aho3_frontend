@@ -1,10 +1,16 @@
-<div class="title">Ready</div>
+<div class="back">
 
-<div class="ok">
-    <button class="btn05 bordercircle3" (click)="ok()"><span>Go!</span></button>
-</div>
+    <div class="start">
 
-<!--
+        <div class="title">Ready</div>
+
+        <div class="ok">
+            <button class="btn05 bordercircle3" (click)="ok()"><span>Go!</span></button>
+        </div>
+
+    </div>
+
+    <!--
 <ul>
     <label for="start_num">開始数: </label>
     <input id="start_num" [(ngModel)]="init_num.st_num" placeholder="終了数より小さく" />
@@ -22,3 +28,28 @@
 
 </ul>
 -->
+
+
+    <div class="comment">
+        <h1>comment</h1>
+
+        <form action="" method="post">
+            <p>記入欄<br>
+                <textarea rows="5" cols="30">コメント</textarea>
+            </p>
+            <input type="submit" value="送信" />
+        </form>
+
+        <p>名前:コメント <button class="good" (click)="good()">♡</button> {{good_num}} <button class="reply"
+                (click)="reply()">→</button> <button class="delete" (click)="delete()">×</button></p>
+
+        <p *ngIf="r_button!=0" style="text-indent:1em"> 返信者:<input type="text" /><button class="good"
+                (click)="good()">♡</button> {{good_num}} <button class="reply" (click)="reply()">→</button> <button
+                class="delete" (click)="delete()">×</button><br>
+            <input type="submit" value="返信" />
+        </p>
+
+
+    </div>
+
+</div>

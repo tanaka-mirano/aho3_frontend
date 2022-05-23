@@ -26,6 +26,9 @@ export class StartComponent implements OnInit {
 
   constructor(private router: Router) { }
 
+  r_button:Number=0;
+  good_num:number=0;
+
   ngOnInit(): void {
 
 
@@ -57,4 +60,17 @@ export class StartComponent implements OnInit {
 
 
   }
+
+  reply(): void {
+    this.r_button=1;
+  }
+
+  good(): void {
+    this.good_num=this.good_num+1;
+  }
+
+  delete(): void {
+    this.good_num=this.good_num+1;
+  }
+
 }

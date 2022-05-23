@@ -16,8 +16,7 @@ export class OmoroComponent implements OnInit {
 
   end_voice: string = "オモロー";
   img_src: any;
-  r_button:Number=0;
-  good_num:number=0;
+
 
   ngOnInit(): void {
     var random = Math.random() * 4;
@@ -28,12 +27,5 @@ export class OmoroComponent implements OnInit {
 
   }
 
-  reply(): void {
-    this.r_button=1;
-  }
-
-  good(): void {
-    this.good_num=this.good_num+1;
-  }
 
 }
