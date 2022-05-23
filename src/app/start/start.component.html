@@ -43,12 +43,13 @@
         <p>名前:コメント <button class="good" (click)="good()">♡</button> {{good_num}} <button class="reply"
                 (click)="reply()">→</button> <button class="delete" (click)="delete()">×</button></p>
 
-        <p *ngIf="r_button!=0" style="text-indent:1em"> 返信者:返信コメント<input type="text" value="返信" /><button class="good"
-                (click)="good()">♡</button> {{good_num}} <button class="reply" (click)="reply()">→</button> <button
-                class="delete" (click)="delete()">×</button><br>
-        <!--
-            <input class="reply_button" type="submit" value="返信" />
-        -->
+        <p *ngIf="r_button!=0" style="text-indent:1em"> 返信者:<input type="text" value="返信" />
+            <button *ngIf="submit_r==0" class="reply_button"  (click)="do_reply()" >返信</button>
+        <div *ngIf="submit_r!=0" class="right button">
+            <button class="good" (click)="good()">♡</button> {{good_num}} <button class="reply"
+                (click)="reply()">→</button>
+            <button class="delete" (click)="delete()">×</button>
+        </div>
         </p>
 
 

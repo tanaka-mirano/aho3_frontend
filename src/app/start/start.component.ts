@@ -28,6 +28,7 @@ export class StartComponent implements OnInit {
 
   r_button:Number=0;
   good_num:number=0;
+  submit_r:Number=0;
 
   ngOnInit(): void {
 
@@ -63,10 +64,15 @@ export class StartComponent implements OnInit {
 
   reply(): void {
     this.r_button=1;
+    this.submit_r=0;
   }
 
   good(): void {
     this.good_num=this.good_num+1;
+  }
+
+  do_reply():void{
+    this.submit_r=1;
   }
 
   delete(): void {
