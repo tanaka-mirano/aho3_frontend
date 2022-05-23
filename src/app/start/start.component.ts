@@ -29,6 +29,7 @@ export class StartComponent implements OnInit {
   r_button:Number=0;
   good_num:number=0;
   submit_r:Number=0;
+  reply_com:String="返信コメント";
 
   ngOnInit(): void {
 
