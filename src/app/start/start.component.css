@@ -203,3 +203,8 @@ ul .message{
     float:right;
     width: 30%;
   }
+
+  .reply_button{
+      position:relative;
+      float: right;
+  }
