@@ -47,15 +47,9 @@
 
         <p *ngIf="r_button!=0" style="text-indent:1em"> 返信者:
             <input *ngIf="submit_r==0" type="text" value="返信" />
-            <span *ngIf="submit_r!=0">{{reply_com}}</span>
             <button *ngIf="submit_r==0" class="reply_button" (click)="do_reply()">返信</button>
-            <button *ngIf="submit_r!=0" class="good" (click)="good()">♡</button> 
-            <span>{{good_num}} </span>
-            <button *ngIf="submit_r!=0" class="reply" (click)="reply()">→</button>
-            <button *ngIf="submit_r!=0" class="delete" (click)="delete()">×</button>
         </p>
 
-        <input type="submit" value="戻る" />
 
 
     </div>

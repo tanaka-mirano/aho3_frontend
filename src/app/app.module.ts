@@ -9,14 +9,16 @@ import { HyoujiComponent } from './hyouji/hyouji.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import { FormsModule } from '@angular/forms';
-import { OmoroComponent } from './omoro/omoro.component'; // <-- NgModel lives here
+import { OmoroComponent } from './omoro/omoro.component';
+import { ReplyComponent } from './reply/reply.component'; // <-- NgModel lives here
 
 @NgModule({
   declarations: [
     AppComponent,
     StartComponent,
     HyoujiComponent,
-    OmoroComponent
+    OmoroComponent,
+    ReplyComponent
     
   ],
   imports: [
