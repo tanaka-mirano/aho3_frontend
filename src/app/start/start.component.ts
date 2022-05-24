@@ -26,10 +26,11 @@ export class StartComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  r_button:Number=0;
-  good_num:number=0;
-  submit_r:Number=0;
+  r_button=0;
+  good_num=0;
+  submit_r=0;
   reply_com:String="返信コメント";
+  i=1;
 
   ngOnInit(): void {
 
@@ -63,8 +64,8 @@ export class StartComponent implements OnInit {
 
   }
 
-  reply(): void {
-    this.r_button=1;
+  reply(): void { 
+    this.r_button=this.r_button+1;
     this.submit_r=0;
   }
 
