@@ -49,7 +49,7 @@
         
         
 
-        <p *ngIf="r_button!=0" style="text-indent:1em"> 返信者:
+        <p *ngIf="r_button!=0"> 返信者:
             <input *ngIf="submit_r==0" type="text" value="返信" />
             <button *ngIf="submit_r==0" class="reply_button" (click)="do_reply()">返信</button>
             <br><br>
