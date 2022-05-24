@@ -213,3 +213,7 @@ ul .message{
       position:relative;
       margin-top:3px;
   }
+
+  .delete{
+      margin-right: 5px;
+  }
