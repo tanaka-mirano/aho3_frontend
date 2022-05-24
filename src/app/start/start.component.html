@@ -40,10 +40,14 @@
             <input type="submit" value="送信" />
         </form>
 
-        <p>名前:コメント             <br><button class="good" (click)="good()">♡</button> {{good_num}} <button class="reply"
-                (click)="reply()">→</button> <button class="delete" (click)="delete()">×</button></p>
+        <p>名前:コメント<br> <br>
+            <button class="good" (click)="good()">♡</button> {{good_num}}
+            <button class="reply"(click)="reply()">→</button> 
+            <button class="delete" (click)="delete()">×</button>
+            <a href="https://pure-springs-29407.herokuapp.com/reply/">返信コメント</a>
+        </p>
         
-        <a href="https://pure-springs-29407.herokuapp.com/reply/">返信コメント</a>
+        
 
         <p *ngIf="r_button!=0" style="text-indent:1em"> 返信者:
             <input *ngIf="submit_r==0" type="text" value="返信" />
