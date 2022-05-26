@@ -52,6 +52,7 @@
         <p *ngIf="r_button!=0"> 返信者:
             <input *ngIf="submit_r==0" type="text" value="返信" />
             <button *ngIf="submit_r==0" class="reply_button" (click)="do_reply()">返信</button>
+            <span *ngIf="submit_r!=0">{{reply_com}}</span>
             <br><br>
             <button *ngIf="submit_r!=0" class="good" (click)="good()">♡</button> 
             <span *ngIf="submit_r!=0">{{good_num}} </span>
