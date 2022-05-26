@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Init_num } from '../Init_num';
+import { user_info } from '../user_info';
 import { Router } from '@angular/router';
 
 
@@ -34,6 +35,8 @@ export class StartComponent implements OnInit {
   delete_com=false;
   reply_all=false;  //返信コメントを表示するかしないか
 
+  user_name="";
+
   ngOnInit(): void {
 
 
@@ -61,7 +64,11 @@ export class StartComponent implements OnInit {
     //console.log(this.init_num.st_num);
 
     this.router.navigate(['/hyouji'], { queryParams: { start: this.init_num.st_num, end: this.init_num.end_num, bi: this.init_num.bi_num, like: this.init_num.like_num } });
+  }
 
+  submit_userinfo(name:string){
+    this.user_name=name;
+    console.log(this.user_name);
 
 
   }
