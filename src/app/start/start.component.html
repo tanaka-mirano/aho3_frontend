@@ -22,14 +22,14 @@
 
             <!--仮ユーザー情報-->
             <label for="user_name">ユーザー名</label> 
-            <input type="text"  name="user_name" #name/><br>
+            <input type="text" [(ngModel)]="user_info.user_name" /><br>
             <label for="user_id">ユーザID</label>
-            <input type="text"  name="user_id"><br>
+            <input type="text" [(ngModel)]="user_info.user_id" /><br>
 
             <p>記入欄<br>
-                <textarea rows="5" cols="30" ></textarea>
+                <textarea rows="5" cols="30" [(ngModel)]="user_info.comment"></textarea>
             </p>
-            <input type="submit" value="送信" (click)="submit_userinfo(name.input_name)"/>
+            <input type="submit" value="送信"  (click)="submit_userinfo()"/>
         </form>
 
         <!--delete_com==trueなら非表示(削除ボタン押下時:コメント削除)-->

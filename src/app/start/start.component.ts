@@ -23,6 +23,12 @@ export class StartComponent implements OnInit {
 
   };
 
+  user_info: user_info = {
+    user_name:"",
+    user_id:"",
+    comment:""
+  };
+
 
 
   constructor(private router: Router) { }
