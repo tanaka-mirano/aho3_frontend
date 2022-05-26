@@ -75,7 +75,7 @@ export class StartComponent implements OnInit {
   }
 
   submit_reply():void{
-    this.reply_button==false;
+    this.reply_button=false;
   }
 
   delete(): void {
