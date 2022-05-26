@@ -73,9 +73,18 @@ export class StartComponent implements OnInit {
 
   submit_userinfo(){
     console.log(this.user_info.user_name);
+    console.log(this.user_info.user_id);
+    console.log(this.user_info.comment);
 
+    let com_length=[...this.user_info.comment].length;
+
+    if(com_length>100){
+      alert('入力できるのは100文字までです');
+    };
 
   }
+
+  
 
   reply(): void { 
     this.reply_button=true;
