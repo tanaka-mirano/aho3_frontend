@@ -22,14 +22,14 @@
 
             <!--仮ユーザー情報-->
             <label for="user_name">ユーザー名</label> 
-            <input type="text"  name="user_name" #user_name/><br>
+            <input type="text"  name="user_name" #name/><br>
             <label for="user_id">ユーザID</label>
             <input type="text"  name="user_id"><br>
 
             <p>記入欄<br>
                 <textarea rows="5" cols="30" ></textarea>
             </p>
-            <input type="submit" value="送信" (click)="submit_userinfo(user_name.name)"/>
+            <input type="submit" value="送信" (click)="submit_userinfo(name.input_name)"/>
         </form>
 
         <!--delete_com==trueなら非表示(削除ボタン押下時:コメント削除)-->

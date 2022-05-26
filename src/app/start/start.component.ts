@@ -66,8 +66,8 @@ export class StartComponent implements OnInit {
     this.router.navigate(['/hyouji'], { queryParams: { start: this.init_num.st_num, end: this.init_num.end_num, bi: this.init_num.bi_num, like: this.init_num.like_num } });
   }
 
-  submit_userinfo(name:string){
-    this.user_name=name;
+  submit_userinfo(input_name:string){
+    this.user_name=input_name;
     console.log(this.user_name);
 
 
