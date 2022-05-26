@@ -29,7 +29,7 @@ export class StartComponent implements OnInit {
   r_button=0;
   good_num=0;
   submit_r=0;
-  reply_com:String="返信コメント";
+  reply_com:String="返信コメントがここに表示されます。100文字以内です。返信に対する返信も可能です。しかし、一番上の階層にある返信コメントと同時に見ることはできません。これはたぶん80もじ";
   i=1;
 
   ngOnInit(): void {
