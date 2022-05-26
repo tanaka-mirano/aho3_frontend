@@ -41,7 +41,6 @@ export class StartComponent implements OnInit {
   delete_com=false;
   reply_all=false;  //返信コメントを表示するかしないか
 
-  user_name="";
 
   ngOnInit(): void {
 
@@ -72,9 +71,8 @@ export class StartComponent implements OnInit {
     this.router.navigate(['/hyouji'], { queryParams: { start: this.init_num.st_num, end: this.init_num.end_num, bi: this.init_num.bi_num, like: this.init_num.like_num } });
   }
 
-  submit_userinfo(input_name:string){
-    this.user_name=input_name;
-    console.log(this.user_name);
+  submit_userinfo(){
+    console.log(this.user_info.user_name);
 
 
   }
