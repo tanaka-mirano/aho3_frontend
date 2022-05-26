@@ -41,6 +41,8 @@ export class StartComponent implements OnInit {
   delete_com=false;
   reply_all=false;  //返信コメントを表示するかしないか
 
+  com_length=0; //文字数
+
 
   ngOnInit(): void {
 
@@ -76,9 +78,9 @@ export class StartComponent implements OnInit {
     console.log(this.user_info.user_id);
     console.log(this.user_info.comment);
 
-    let com_length=[...this.user_info.comment].length;
+    this.com_length=[...this.user_info.comment].length;
 
-    if(com_length>100){
+    if(this.com_length>100){
       alert('入力できるのは100文字までです');
     };
 
