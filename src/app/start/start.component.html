@@ -1,6 +1,7 @@
-<div class="back">
+<div class="back">  <!--画面背景-->
 
-    <div class="start">
+    <!--スタート画面：左配置-->
+    <div class="start">     
 
         <div class="title">Ready</div>
 
@@ -10,7 +11,64 @@
 
     </div>
 
-    <!--
+
+
+    <!--コメント欄：右配置-->
+    <div class="comment">   
+        <h1>comment</h1>
+
+        <!--コメント記入欄-->
+        <form action="" method="post">
+            <p>記入欄<br>
+                <textarea rows="5" cols="30">コメント</textarea>
+            </p>
+            <input type="submit" value="送信" />
+        </form>
+
+        <!--delete_com==trueなら非表示(削除ボタン押下時:コメント削除)-->
+        <div *ngIf="delete_com==false" class="parent1">
+            <p>名前:コメント<br> <br>
+                <button class="good" (click)="good()">♡</button> {{good_num}}              <!--評価ボタン-->
+                <button class="reply" (click)="reply()">→</button>                         <!--返信ボタン-->
+                <button class="delete" (click)="delete()">×</button>                       <!--削除ボタン-->
+                <button class="appear_rep" (click)="appear_rep()">返信コメント</button>     <!--返信コメント表示ボタン：返信コメントがあるとき-->
+            </p>
+        </div>
+
+        <!--reply_all==trueなら表示（返信コメントボタン押下時:返信コメント表示）-->
+        <div *ngIf="reply_all==true" class="rep_comment">
+            <span>{{reply_com}}</span>
+            <br><br>
+            <button class="good" (click)="good()">♡</button>
+            <span>{{good_num}} </span>
+            <button class="reply" (click)="reply()">→</button>
+            <button class="delete" (click)="delete()">×</button>
+            <button class="appear_rep" (click)="appear_rep()">返信コメント</button>
+            <br>
+            <button class="back_button" (click)="delete()">戻る</button>
+        </div>
+
+
+        <!--reply_button==trueなら表示（返信ボタン押下時:返信欄表示）-->
+        <div *ngIf="reply_button==true" class="rep_area">
+            <p> 返信者:
+                <input type="text" value="返信" />
+                <button class="submit_reply_button" (click)="submit_reply()">返信</button>
+            </p>
+        </div>
+
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+<!--
 <ul>
     <label for="start_num">開始数: </label>
     <input id="start_num" [(ngModel)]="init_num.st_num" placeholder="終了数より小さく" />
@@ -28,45 +86,3 @@
 
 </ul>
 -->
-
-
-    <div class="comment">
-        <h1>comment</h1>
-
-        <form action="" method="post">
-            <p>記入欄<br>
-                <textarea rows="5" cols="30">コメント</textarea>
-            </p>
-            <input type="submit" value="送信" />
-        </form>
-
-        <div *ngIf="delete_com!=1" class="parent1">
-        <p>名前:コメント<br> <br>
-            <button class="good" (click)="good()">♡</button> {{good_num}}
-            <button class="reply"(click)="reply()">→</button> 
-            <button class="delete" (click)="delete()">×</button>
-            <a href="https://pure-springs-29407.herokuapp.com/reply/">返信コメント</a>
-        </p>
-    </div>
-        
-        
-
-        <p *ngIf="r_button!=0"> 返信者:
-            <input *ngIf="submit_r==0" type="text" value="返信" />
-            <button *ngIf="submit_r==0" class="reply_button" (click)="do_reply()">返信</button>
-            <span *ngIf="submit_r!=0">{{reply_com}}</span>
-            <br><br>
-            <button *ngIf="submit_r!=0" class="good" (click)="good()">♡</button> 
-            <span *ngIf="submit_r!=0">{{good_num}} </span>
-            <button *ngIf="submit_r!=0" class="reply" (click)="reply()">→</button>
-            <button *ngIf="submit_r!=0" class="delete" (click)="delete()">×</button>
-            <a *ngIf="submit_r!=0" href="https://pure-springs-29407.herokuapp.com/reply/">返信コメント</a>
-            <br>
-            <button *ngIf="submit_r!=0" class="back_button" (click)="delete()">戻る</button>
-        </p>
-
-
-
-    </div>
-
-</div>
