@@ -17,9 +17,13 @@ httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
-newComment(user_name: string, user_id: string, comment: string): Observable<user_info> {
+newComment(user_name: string, user_id: string, comment: string): Observable<any> {
 
-  return this.http.post<user_info>(this.commentUrl,{user_name:user_name,user_id:user_id,comment:comment},this.httpOptions);
+
+  return this.http.post(this.commentUrl,{user_name:user_name,user_id:user_id,comment:comment},this.httpOptions);
+
+  //返すものがないときは、postの後ろに<>いらない。Observableはanyにしておくことで、何が返ってきても大丈夫になる。
+  
 }
 
 
