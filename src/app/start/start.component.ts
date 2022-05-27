@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Init_num } from '../Init_num';
 import { user_info } from '../user_info';
 import { Router } from '@angular/router';
+import { CommentService } from '../comment.service';
 
 
 @Component({
@@ -31,17 +32,15 @@ export class StartComponent implements OnInit {
 
 
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private commentService: CommentService) { }
 
   reply_button=false;
   good_num=0;
-  
-  reply_com:String="返信コメントがここに表示されます。100文字以内です。返信に対する返信も可能です。しかし、一番上の階層にある返信コメントと同時に見ることはできません。これはたぶん80もじ";
+  reply_com=""; //返信コメント
   i=1;
   delete_com=false;
   reply_all=false;  //返信コメントを表示するかしないか
-
-  
   com_length=[...this.user_info.comment].length;  //文字数
 
   ngOnInit(): void {
@@ -84,7 +83,16 @@ export class StartComponent implements OnInit {
       alert('入力できるのは100文字までです');
     };
 
+    var user_name=this.user_info.user_name;
+    var user_id=this.user_info.user_id;
+    var comment=this.user_info.comment;
+
+    this.commentService.newComment(user_name, user_id, comment)
+        .subscribe();
+
   }
+
+  
 
   
 
