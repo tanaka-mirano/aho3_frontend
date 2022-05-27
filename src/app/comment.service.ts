@@ -17,9 +17,9 @@ httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
-newComment(user_name: string, user_id: string, comment: string): Observable<Object> {
+newComment(user_name: string, user_id: string, comment: string): Observable<user_info> {
 
-  return this.http.post(this.commentUrl,{user_name:user_name,user_id:user_id,comment:comment},this.httpOptions);
+  return this.http.post<user_info>(this.commentUrl,{user_name:user_name,user_id:user_id,comment:comment},this.httpOptions);
 }
 
 
