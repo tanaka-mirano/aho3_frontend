@@ -10,7 +10,7 @@ export class CommentService {constructor(
   private http: HttpClient,
 ) { }
 
-private commentUrl = 'https://tranquil-crag-27137.herokuapp.com/comments';
+private commentUrl = 'https://tranquil-crag-27137.herokuapp.com/comments';    //変更１：https://tranquil-crag-27137.herokuapp.com/comments
 
 
 httpOptions = {
