@@ -1,6 +1,6 @@
 {
-    "/app": {
+    "/comments": {
       "target": "http://localhost:8000",
-      "pathRewrite": {"^/app": ""}
+      "pathRewrite": {"^/comments": ""}
     }
   }
