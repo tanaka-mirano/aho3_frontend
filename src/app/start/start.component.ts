@@ -172,6 +172,8 @@ export class StartComponent implements OnInit {
   good(com_id: number, push_b: boolean): void {
 
     //var user_id=this.user_info.user_id;
+    console.log(push_b);
+    console.log(com_id);
 
     var user_id = "apple";
 
