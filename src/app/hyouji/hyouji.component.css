@@ -44,7 +44,7 @@ body {
 
 .no {
   /*通常画像のときの数字*/
-  font-size: 200px;
+  font-size: 100px;
   position: absolute;
   margin-top: 50px;
   margin-left: 150px;
@@ -58,7 +58,7 @@ body {
 
 .aho {
   /*あほ画像のときの数字*/
-  font-size: 200px;
+  font-size: 100px;
   position: absolute;
   margin-top: 30px;
   margin-left: 130px;
@@ -71,7 +71,7 @@ body {
 
 .like {
   /*好きな数字のときの数字*/
-  font-size: 200px;
+  font-size: 100px;
   position: absolute;
   margin-top: 30px;
   margin-left: 150px;
@@ -116,8 +116,8 @@ body {
 
 img {
 
-  width: 400px;
-  height: 400px;
+  width: 200px;
+  height: 200px;
 
 }
 
