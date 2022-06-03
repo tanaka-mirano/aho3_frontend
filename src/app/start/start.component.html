@@ -12,28 +12,32 @@
 
 
         <table>
-<tr>
-<td><p *ngIf="!reply_button && !edit_button">新規投稿<br>
-    <textarea rows="10" cols="40" name="comment_area" placeholder="100文字以下で入力してください"
-        [(ngModel)]="user_info.comment" onkeyup="textcount(this)"></textarea>
-</p>
-<p *ngIf="edit_button">編集<br>
-    <textarea rows="10" cols="40" name="comment_area" placeholder="100文字以下で入力してください" [(ngModel)]="user_info.comment">{{edit_comment}}</textarea>
-</p>
-<p *ngIf="reply_button">返信投稿<br>
-    <textarea rows="10" cols="40" name="comment_area" placeholder="100文字以下で入力してください" [(ngModel)]="user_info.comment"></textarea>
-</p> </td>
+            <tr>
+                <td>
+                    <p *ngIf="!reply_button && !edit_button">新規投稿<br>
+                        <textarea rows="10" cols="40" name="comment_area" placeholder="100文字以下で入力してください"
+                            [(ngModel)]="user_info.comment" onkeyup="textcount(this)"></textarea>
+                    </p>
+                    <p *ngIf="edit_button">編集<br>
+                        <textarea rows="10" cols="40" name="comment_area" placeholder="100文字以下で入力してください"
+                            [(ngModel)]="user_info.comment">{{edit_comment}}</textarea>
+                    </p>
+                    <p *ngIf="reply_button">返信投稿<br>
+                        <textarea rows="10" cols="40" name="comment_area" placeholder="100文字以下で入力してください"
+                            [(ngModel)]="user_info.comment"></textarea>
+                    </p>
+                </td>
 
-<td>
-    <input *ngIf="!reply_button && !edit_button" type="submit" value="送信" (click)="submit_userinfo()" />
-    <input *ngIf="edit_button" type="submit" value="更新" (click)="submit_edit()" />
-    <input *ngIf="reply_button" type="submit" value="返信" (click)="submit_reply()" />
-</td>
+                <td>
+                    <input *ngIf="!reply_button && !edit_button" type="submit" value="送信" (click)="submit_userinfo()" />
+                    <input *ngIf="edit_button" type="submit" value="更新" (click)="submit_edit()" />
+                    <input *ngIf="reply_button" type="submit" value="返信" (click)="submit_reply()" />
+                </td>
 
 
 
-</tr>
- <!--
+            </tr>
+            <!--
         </table>
         
        
@@ -59,7 +63,8 @@
             <input *ngIf="edit_button" type="submit" value="更新" (click)="submit_edit()" />
             <input *ngIf="reply_button" type="submit" value="返信" (click)="submit_reply()" />
         </form>
-    -->
+        -->
+    
 
 
     </div>
@@ -68,40 +73,42 @@
 
     <!--コメント欄：右配置-->
     <div class="comment">
-        
-        
-            <table class="com_table">
-                <tr>
-                    <th>Comment</th>
-                    <th>User</th>
-                    <th>Date</th>
-                </tr>
 
-                <!--返信表示ボタン押下時：親コメントの表示-->
-                <tr class="parent_com" *ngIf="reply_com_btn">
-                    <td>{{parent_info.comment}}</td>
-                    <td>{{parent_info.user_name}}</td>
-                    <td>{{parent_info.updated_at}}</td>
-                    <td></td>
-                </tr>
 
-                <tr *ngFor="let comment of com_info">
-                    <td>{{comment.comment}}</td>
-                    <td>{{comment.user_name}}</td>
-                    <td>{{comment.updated_at}}</td>
+        <table class="com_table">
+            <tr>
+                <th>Comment</th>
+                <th>User</th>
+                <th>Date</th>
+            </tr>
 
-                    <br><br>
-                    <button [class.nomal]="!comment.push_b" [class.good]="comment.push_b" (click)="good(comment.com_id,comment.push_b)">♡</button> {{comment.good_num}}
-                    <!--評価ボタン-->
-                    <button class="reply" (click)="reply(comment.com_id)">→</button>
-                    <!--返信ボタン-->
-                    <button class="delete" (click)="delete(comment.com_id)">×</button>
-                    <!--削除ボタン-->
-                    <button *ngIf="comment.rep_com==true" class="appear_rep" (click)="appear_rep(comment.com_id,comment.comment,comment.user_name,comment.updated_at)">返信コメント</button>
-                    <button  class="edit_com" (click)="edit_com(comment.comment,comment.com_id)">編集</button>
-                    <!--返信コメント表示ボタン：返信コメントがあるとき-->
+            <!--返信表示ボタン押下時：親コメントの表示-->
+            <tr class="parent_com" *ngIf="reply_com_btn">
+                <td>{{parent_info.comment}}</td>
+                <td>{{parent_info.user_name}}</td>
+                <td>{{parent_info.updated_at}}</td>
+                <td></td>
+            </tr>
 
-                    <!--
+            <tr *ngFor="let comment of com_info">
+                <td>{{comment.comment}}</td>
+                <td>{{comment.user_name}}</td>
+                <td>{{comment.updated_at}}</td>
+
+                <br><br>
+                <button [class.nomal]="!comment.push_b" [class.good]="comment.push_b"
+                    (click)="good(comment.com_id,comment.push_b)">♡</button> {{comment.good_num}}
+                <!--評価ボタン-->
+                <button class="reply" (click)="reply(comment.com_id)">→</button>
+                <!--返信ボタン-->
+                <button class="delete" (click)="delete(comment.com_id)">×</button>
+                <!--削除ボタン-->
+                <button *ngIf="comment.rep_com==true" class="appear_rep"
+                    (click)="appear_rep(comment.com_id,comment.comment,comment.user_name,comment.updated_at)">返信コメント</button>
+                <button class="edit_com" (click)="edit_com(comment.comment,comment.com_id)">編集</button>
+                <!--返信コメント表示ボタン：返信コメントがあるとき-->
+
+                <!--
                     <div *ngIf="reply_button || edit_button">
                         <td>{{parent_info.user_name}}</td>
                         <textarea rows="10" cols="40" name="comment_area" placeholder="100文字以下で入力してください" 
@@ -111,11 +118,11 @@
                     </div>
                     -->
 
-                </tr>
-            </table>
+            </tr>
+        </table>
 
-            <button *ngIf="reply_com_btn" class="back" (click)="back()">back</button>            
-        
+        <button *ngIf="reply_com_btn" class="back" (click)="back()">back</button>
+
 
 
 
