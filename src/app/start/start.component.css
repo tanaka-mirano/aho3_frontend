@@ -134,13 +134,15 @@ ul .message{
   .nomal{
     outline:none;
     border: none;
+    background: transparent;
     
   }
 
   .good{
    outline:none;
-   color: #4CAF50;
+   color: #ffafe4ce;
    border: none;
+   background: transparent;
 
   }
 
