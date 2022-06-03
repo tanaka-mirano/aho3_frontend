@@ -76,14 +76,11 @@ export class StartComponent implements OnInit {
 
   grandparent_arr: any[] = [];
 
-  
-
-
-
-
-
   ngOnInit(): void {
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/**LIFF */
+  
+/*初期化*/
 
     /**
 * Initialize LIFF
@@ -100,6 +97,8 @@ export class StartComponent implements OnInit {
         //console.log((window as any).liff.getLanguage());
       });
 
+    
+    /**ユーザ情報取得 */
       (window as any). liff.ready.then(() => {
         // liff.init()完了後に実行される処理
         (window as any).liff.getProfile()
@@ -111,27 +110,13 @@ export class StartComponent implements OnInit {
         });
       });
 
-    /*
-    (window as any).liff
-      .getProfile()
-      .then((profile:profile) => {
-        this.user_info.user_name = profile.displayName;
-        console.log(this.user_info.user_name);
-
-      });
-      */
-
-
-    /*初期化終了*/
-
-
     //////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**最初のコメント表示 */
 
-    //var user_id=this.user_info.user_id;
+    var user_id=this.user_info.user_id;
 
-    var user_id = "apple";
+    //var user_id = "apple";
   this.commentService.getComment(user_id)
   .subscribe(com_info => {  //返ってきたものcom_infoでこれから処理するよ
     this.com_info = com_info; //インターフェースの配列に返ってきた値いれるよ
@@ -187,11 +172,11 @@ submit_reply(): void {
 
 var parent_id = this.reply_com_id;
 
-//var user_name = this.user_info.user_name;
-//var user_id = this.user_info.user_id;
+var user_name = this.user_info.user_name;
+var user_id = this.user_info.user_id;
 
-var user_id = "lemon";
-var user_name = "レモン";
+//var user_id = "lemon";
+//var user_name = "レモン";
 
 var comment = this.user_info.comment;
 
@@ -206,17 +191,19 @@ this.commentService.postreplyComment(user_name, user_id, comment, parent_id)
 /**評価ボタン */
 
 good(com_id: number, push_b: boolean): void {
+  //var user_id = "apple";
 
-  //var user_id=this.user_info.user_id;
-  console.log(push_b);
-  console.log(com_id);
+  var user_id=this.user_info.user_id;
+  //console.log(push_b);
+  //console.log(com_id);
+  //console.log(user_id);
 
-  var user_id = "apple";
+  //var user_id = "apple";
 
   this.commentService.postLike(com_id, user_id, push_b)
     .subscribe();
 
-  console.log(push_b);
+  
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -240,9 +227,9 @@ submit_edit() {
   var com_id = this.edit_com_id;
 
   //var user_name = this.user_info.user_name;
-  //var user_id = this.user_info.user_id;
+  var user_id = this.user_info.user_id;
 
-  var user_id = "apple";
+  //var user_id = "apple";
 
   var comment = this.user_info.comment;
 
@@ -256,8 +243,8 @@ submit_edit() {
 /**コメント削除 */
 delete (com_id: number): void {
 
-  //var user_id=this.user_info.user_id;
-  var user_id = "apple";      //liffで取れるようになったら消す
+  var user_id=this.user_info.user_id;
+  //var user_id = "apple";      //liffで取れるようになったら消す
 
   this.commentService.deleteComment(com_id, user_id)
     .subscribe();
@@ -294,8 +281,8 @@ appear_rep(com_id: number, comment: string, user_name: string, updated_at: strin
   this.count++;               //返信コメント表示ボタン押下回数カウント
   console.log(this.count);
 
-  //var user_id=this.user_info.user_id; //liffで取れるようになったら
-  var user_id = "apple";      //liffで取れるようになったら消す
+  var user_id=this.user_info.user_id; //liffで取れるようになったら
+  //var user_id = "apple";      //liffで取れるようになったら消す
 
   this.commentService.getreplyComment(com_id, user_id)
     .subscribe(com_info => {
@@ -307,8 +294,8 @@ appear_rep(com_id: number, comment: string, user_name: string, updated_at: strin
 /**前のコメント表示に戻る */
 back(): void {
 
-  //const user_id=this.user_info.user_id;
-  var user_id = "apple";              //liffで取れるようになったら消す
+  var user_id=this.user_info.user_id;
+  //var user_id = "apple";              //liffで取れるようになったら消す
 
 
   if(this.count == 1) {              //返信コメント表示ボタンが一回しか押されていない＝戻ると一番上の親
