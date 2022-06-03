@@ -76,6 +76,8 @@ export class StartComponent implements OnInit {
 
   grandparent_arr: any[] = [];
 
+  
+
 
 
 
@@ -93,7 +95,7 @@ export class StartComponent implements OnInit {
       })
       .then(() => {
         // start to use LIFF's api
-        //initializeApp();
+       // initializeApp();
         //alert("initializeAppend");
         //console.log((window as any).liff.getLanguage());
       });
@@ -102,9 +104,9 @@ export class StartComponent implements OnInit {
     (window as any).liff
       .getProfile()
       .then((profile:profile) => {
-        const name = profile.displayName;
-        console.log(name);
-        
+        this.user_info.user_name = profile.displayName;
+        console.log(this.user_info.user_name);
+
       });
 
 
