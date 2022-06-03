@@ -44,13 +44,13 @@ getComment(user_id:string): Observable<com_info[]>{
 
 getreplyComment(com_id:number,user_id:string): Observable<com_info[]>{
   //const url = `${this.commentUrl}/${user_id}`;
-  return this.http.get<com_info[]>(`${this.commentUrl}/?com_id=${com_id}&user_id=${user_id}`);
+  return this.http.get<com_info[]>(`${this.commentUrl}?com_id=${com_id}&user_id=${user_id}`);
 
 }
 
 deleteComment(com_id:number,user_id:string): Observable<any>{
   //const url = `${this.commentUrl}/${user_id}`;
-  return this.http.delete(`${this.commentUrl}/?com_id=${com_id}&user_id=${user_id}`);
+  return this.http.delete(`${this.commentUrl}?com_id=${com_id}&user_id=${user_id}`);
 
 }
 
