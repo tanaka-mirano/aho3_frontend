@@ -129,6 +129,36 @@ ul .message{
       margin-right: 10px;
   }
 
+  .good {
+    position: absolute;
+    width: 100px;
+    height: 90px;
+    left: 50%;
+    margin-top: -45px;
+    margin-left: -50px;
+  }
+
+  .good:before,
+.good:after {
+  position: absolute;
+  content: "";
+  left: 50px;
+  top: 0;
+  width: 50px;
+  height: 80px;
+  background: #f88dc8;
+  border-radius: 50px 50px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+.good:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin :100% 100%;
+}
+
+
+
 
 
   table {

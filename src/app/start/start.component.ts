@@ -54,6 +54,7 @@ export class StartComponent implements OnInit {
     statusMessage: "",
   };
 
+  
 
   constructor(private router: Router,
     private commentService: CommentService) { }

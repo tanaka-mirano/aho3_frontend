@@ -26,8 +26,9 @@
             <p *ngIf="reply_button">返信投稿<br>
                 <textarea rows="10" cols="40" name="comment_area" placeholder="100文字以下で入力してください" [(ngModel)]="user_info.comment"></textarea>
             </p>
-
+<!--
             <span>{{com_length}}文字</span>
+            -->
             <input *ngIf="!reply_button && !edit_button" type="submit" value="送信" (click)="submit_userinfo()" />
             <input *ngIf="edit_button" type="submit" value="更新" (click)="submit_edit()" />
             <input *ngIf="reply_button" type="submit" value="返信" (click)="submit_reply()" />
@@ -63,7 +64,7 @@
                     <td>{{comment.updated_at}}</td>
 
                     <br><br>
-                    <button class="good" (click)="good(comment.com_id,comment.push_b)">♡</button> {{comment.good_num}}
+                    <button class="good" (click)="good(comment.com_id,comment.push_b)"></button> {{comment.good_num}}
                     <!--評価ボタン-->
                     <button class="reply" (click)="reply(comment.com_id)">→</button>
                     <!--返信ボタン-->
