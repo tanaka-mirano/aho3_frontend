@@ -12,16 +12,11 @@
 
         <!--コメント記入欄-->
         <form action="" method="post">
-
-            <!--仮ユーザー情報-->
-            <label for="user_name">ユーザー名:{{user_info.user_name}}</label>
-            <input type="text" name="user_name" [(ngModel)]="user_info.user_name" /><br>
-            <label for="user_id">ユーザID:{{user_info.user_name}}</label>
-            <input type="text" name="user_id" [(ngModel)]="user_info.user_id" /><br>
+            
 
             <p *ngIf="!reply_button && !edit_button">新規投稿<br>
                 <textarea rows="10" cols="40" name="comment_area" placeholder="100文字以下で入力してください"
-                    [(ngModel)]="user_info.comment" onkeyup="textcount(value);"></textarea>
+                    [(ngModel)]="user_info.comment" onkeyup="textcount(user_info.comment);"></textarea>
             </p>
 
             <p *ngIf="edit_button">編集<br>
