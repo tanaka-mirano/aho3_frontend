@@ -95,12 +95,22 @@ export class StartComponent implements OnInit {
       })
       .then(() => {
         // start to use LIFF's api
-       // initializeApp();
+       //initializeApp();
         //alert("initializeAppend");
         //console.log((window as any).liff.getLanguage());
       });
 
-    
+      (window as any). liff.ready.then(() => {
+        // liff.init()完了後に実行される処理
+        (window as any).liff.getProfile()
+        .then((profile:profile) => {
+          this.user_info.user_name = profile.displayName;
+          console.log(this.user_info.user_name);
+  
+        });
+      });
+
+    /*
     (window as any).liff
       .getProfile()
       .then((profile:profile) => {
@@ -108,6 +118,7 @@ export class StartComponent implements OnInit {
         console.log(this.user_info.user_name);
 
       });
+      */
 
 
     /*初期化終了*/
