@@ -188,6 +188,12 @@ input[type="submit"] {
 
 }
 
+.appear_rep{
+  border: none;
+  background: transparent;
+  color: #8BC34A;
+}
+
 
 
 
