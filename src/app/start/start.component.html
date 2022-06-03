@@ -10,6 +10,31 @@
             <button class="start_btn" (click)="ok()"><span>Go!</span></button>
         </div>
 
+
+        <table>
+<tr>
+<td><p *ngIf="!reply_button && !edit_button">新規投稿<br>
+    <textarea rows="10" cols="40" name="comment_area" placeholder="100文字以下で入力してください"
+        [(ngModel)]="user_info.comment" onkeyup="textcount(this)"></textarea>
+</p>
+<p *ngIf="edit_button">編集<br>
+    <textarea rows="10" cols="40" name="comment_area" placeholder="100文字以下で入力してください" [(ngModel)]="user_info.comment">{{edit_comment}}</textarea>
+</p>
+<p *ngIf="reply_button">返信投稿<br>
+    <textarea rows="10" cols="40" name="comment_area" placeholder="100文字以下で入力してください" [(ngModel)]="user_info.comment"></textarea>
+</p> </td>
+
+<td>
+    <input *ngIf="!reply_button && !edit_button" type="submit" value="送信" (click)="submit_userinfo()" />
+    <input *ngIf="edit_button" type="submit" value="更新" (click)="submit_edit()" />
+    <input *ngIf="reply_button" type="submit" value="返信" (click)="submit_reply()" />
+</td>
+
+
+
+</tr>
+
+        </table>
         <!--コメント記入欄-->
         <form action="" method="post">
             
