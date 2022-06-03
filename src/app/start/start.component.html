@@ -64,7 +64,7 @@
                     <td>{{comment.updated_at}}</td>
 
                     <br><br>
-                    <button class="good" (click)="good(comment.com_id,comment.push_b)"></button> {{comment.good_num}}
+                    <button [class.nomal]="!comment.push_b" [class.good]="comment.push_b" (click)="good(comment.com_id,comment.push_b)">♡</button> {{comment.good_num}}
                     <!--評価ボタン-->
                     <button class="reply" (click)="reply(comment.com_id)">→</button>
                     <!--返信ボタン-->

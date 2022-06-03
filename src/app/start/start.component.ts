@@ -198,14 +198,10 @@ this.commentService.postreplyComment(user_name, user_id, comment, parent_id)
 /**評価ボタン */
 
 good(com_id: number, push_b: boolean): void {
-  //var user_id = "apple";
+ 
 
   var user_id=this.user_info.user_id;
-  //console.log(push_b);
-  //console.log(com_id);
-  //console.log(user_id);
 
-  //var user_id = "apple";
 
   this.commentService.postLike(com_id, user_id, push_b)
     .subscribe();

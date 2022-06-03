@@ -106,13 +106,15 @@ ul .message{
     width:300px;
     height:100px;
     border-radius: 0.3em;      /* 角丸 */
+
   }
 
   input[type="submit"]{
     border: 1px solid #8BC34A; /* 枠線 */
     background-color: #8BC34A;
     border-radius: 0.3em;      /* 角丸 */
-    color:#fff
+    color:#fff;
+    float:right;
   }
 
   .reply_button{
@@ -129,34 +131,14 @@ ul .message{
       margin-right: 10px;
   }
 
-  .good {
-    position:relative;
-    width: 10px;
-    height: 9px;
-    left: 50%;
-    margin-top: -45px;
-    margin-left: -50px;
+  .nomal{
+    outline:none;
   }
 
-  .good:before,
-.good:after {
-  position: absolute;
-  content: "";
-  left: 50px;
-  top: 0;
-  width: 5px;
-  height: 8px;
-  background: #f88dc8;
-  border-radius: 5px 5px 0 0;
-  transform: rotate(-45deg);
-  transform-origin: 0 100%;
-}
-.good:after {
-  left: 0;
-  transform: rotate(45deg);
-  transform-origin :100% 100%;
-}
-
+  .good{
+   outline:none;
+   color: #4CAF50;
+  }
 
 
 
