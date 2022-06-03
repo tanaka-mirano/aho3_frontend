@@ -1,201 +1,225 @@
 .title {
 
-    font-family: "游ゴシック体", "YuGothic";
-    text-align: center;
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    font-size: 30px;
+  font-family: "游ゴシック体", "YuGothic";
+  text-align: center;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
 
 }
 
 
 
 .ok span {
-    font-size: clamp(15px, 11vw, 80px);
-    font-family: "游ゴシック体", "YuGothic";
+  font-size: clamp(15px, 11vw, 80px);
+  font-family: "游ゴシック体", "YuGothic";
 }
 
 .ok {
 
-    position:relative;
-    text-align: center;
-    /*50%だと親要素の中心に上端が来る。（transform scaleを使用するとずれたため40%）ここをmargin-topにすると親要素の下に来る*/
-    left: 50%;
-    /*50%だと親要素の中心に左端が来る*/
-    transform: translate(-50%, -50%);
+  position: relative;
+  text-align: center;
+  /*50%だと親要素の中心に上端が来る。（transform scaleを使用するとずれたため40%）ここをmargin-topにすると親要素の下に来る*/
+  left: 50%;
+  /*50%だと親要素の中心に左端が来る*/
+  transform: translate(-50%, -50%);
 
-    margin-top:150px;
+  margin-top: 150px;
 
-    
-    
+
+
 }
 
-.start_btn{
-    border: 1px solid #8BC34A; /* 枠線 */
-    background-color: #8BC34A;
-    border-radius: 0.3em;      /* 角丸 */
-    color:#fff
+.start_btn {
+  border: 1px solid #8BC34A;
+  /* 枠線 */
+  background-color: #8BC34A;
+  border-radius: 0.3em;
+  /* 角丸 */
+  color: #fff
 }
 
 
 /*開始数：とか*/
 ul {
-    position: absolute;
-    /*←絶対位置*/
-    font-size: clamp(1px, 3vw, 15px);
-    bottom: 0;
- 
-}
-
-ul .message{
-    position: absolute;
-    text-align: center;
-    /*50%だと親要素の中心に上端が来る。（transform scaleを使用するとずれたため40%）ここをmargin-topにすると親要素の下に来る*/
-    left: 50%;
-    transform: translate(-50%, 0%);
-    font-size:5px;
-    
+  position: absolute;
+  /*←絶対位置*/
+  font-size: clamp(1px, 3vw, 15px);
+  bottom: 0;
 
 }
 
-.back{
-    /*background-color: #fbfd93;*/
-    width: 100%;
+ul .message {
+  position: absolute;
+  text-align: center;
+  /*50%だと親要素の中心に上端が来る。（transform scaleを使用するとずれたため40%）ここをmargin-topにすると親要素の下に来る*/
+  left: 50%;
+  transform: translate(-50%, 0%);
+  font-size: 5px;
 
-    display: flex;
-    flex-direction: column;
-    
-  }
 
-.start{
-    position:relative;
-    /*
+}
+
+.back {
+  /*background-color: #fbfd93;*/
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+.start {
+  position: relative;
+  /*
     float:left;
     width: 30%;
     */
 
 }
 
-.comment{
+.comment {
 
-    position:relative;
-    /*left: 40%;*/
-    /*
+  position: relative;
+  /*left: 40%;*/
+  /*
     float:right;
     width: 70%;
     */
-    
-  }
 
-  form{
-    position:relative;
-    left: 20%;  
 }
 
-  textarea{
-    border:0;
-    padding:10px;
-    font-size:1.0em;
-    font-family:Arial, sans-serif;
-    color:#aaa;
-    border:solid 1px #8BC34A;;
-    margin:0 0 20px;
-    width:300px;
-    height:100px;
-    border-radius: 0.3em;      /* 角丸 */
-
-  }
-
-  input[type="submit"]{
-    border: 1px solid #8BC34A; /* 枠線 */
-    background-color: #8BC34A;
-    border-radius: 0.3em;      /* 角丸 */
-    color:#fff;
-    float:right;
-  }
-
-  .reply_button{
-      position:relative;
-      margin-left: 10px;
-      border: 1px solid #8BC34A; /* 枠線 */
-    background-color: #8BC34A;
-    border-radius: 0.3em;      /* 角丸 */
-    color:#fff;
-  
-  }
-
-  .reply_form{
-      position:relative;
-      margin-top:3px;
-  }
-
-  .delete{
-      margin-right: 10px;
-      border: 1px solid #8BC34A; /* 枠線 */
-    background-color: #8BC34A;
-    border-radius: 0.3em;      /* 角丸 */
-    color:#fff;
-  
-  }
-
-  .reply{
-    margin-right: 10px;
-    border: 1px solid #8BC34A; /* 枠線 */
-    background-color: #8BC34A;
-    border-radius: 0.3em;      /* 角丸 */
-    color:#fff;
-  
+form {
+  position: relative;
+  left: 20%;
 }
 
-  .nomal{
-    outline:none;
-    border: none;
-    background: transparent;
-    
-  }
+textarea {
+  border: 0;
+  padding: 10px;
+  font-size: 1.0em;
+  font-family: Arial, sans-serif;
+  color: #aaa;
+  border: solid 1px #8BC34A;
+  ;
+  margin: 0 0 20px;
+  width: 300px;
+  height: 100px;
+  border-radius: 0.3em;
+  /* 角丸 */
 
-  .good{
-   outline:none;
-   color: #ffafe4ce;
-   border: none;
-   background: transparent;
+}
 
-  }
+input[type="submit"] {
+  border: 1px solid #8BC34A;
+  /* 枠線 */
+  background-color: #8BC34A;
+  border-radius: 0.3em;
+  /* 角丸 */
+  color: #fff;
+  float: right;
+}
+
+.reply_button {
+  position: relative;
+  margin-left: 10px;
+  border: 1px solid #8BC34A;
+  /* 枠線 */
+  background-color: #8BC34A;
+  border-radius: 0.3em;
+  /* 角丸 */
+  color: #fff;
+
+}
+
+.reply_form {
+  position: relative;
+  margin-top: 3px;
+}
+
+.delete {
+  margin-right: 10px;
+  border: 1px solid #8BC34A;
+  /* 枠線 */
+  background-color: #8BC34A;
+  border-radius: 0.3em;
+  /* 角丸 */
+  color: #fff;
+
+}
+
+.edit_com {
+  margin-right: 10px;
+  border: 1px solid #8BC34A;
+  /* 枠線 */
+  background-color: #ffffff;
+  border-radius: 0.3em;
+  /* 角丸 */
+  color: #8BC34A;
+
+}
+
+.reply {
+  margin-right: 10px;
+  border: 1px solid #8BC34A;
+  /* 枠線 */
+  background-color: #8BC34A;
+  border-radius: 0.3em;
+  /* 角丸 */
+  color: #fff;
+
+}
+
+.nomal {
+  outline: none;
+  border: none;
+  background: transparent;
+
+}
+
+.good {
+  outline: none;
+  color: #ffafe4ce;
+  border: none;
+  background: transparent;
+
+}
 
 
 
 
-  table {
-    border-collapse: collapse;
-    margin: 0 auto;
-    padding: 0;
-    width: 650px;
-    table-layout: fixed;
-    color: #4CAF50;
-  }
-  
-  table tr {
-    background-color: #fff;
-    padding: .35em;
-    border-bottom: 1px dotted #8BC34A;
-  }
-  table tr:last-child{
-     border-bottom: 2px solid #18521b;
-  }
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  padding: 0;
+  width: 650px;
+  table-layout: fixed;
+  color: #4CAF50;
+}
 
-  table th,
-  table td {
-    padding: 1em 10px 1em 1em;
-  }
+table tr {
+  background-color: #fff;
+  padding: .35em;
+  border-bottom: 1px dotted #8BC34A;
+}
 
-  tbody th {
-      color: #0f7d13;
-  }
+table tr:last-child {
+  border-bottom: 2px solid #18521b;
+}
 
-  table tr.parent_com{
-    background-color: #8BC34A;
-    color:#fff;
-  }
+table th,
+table td {
+  padding: 1em 10px 1em 1em;
+}
+
+tbody th {
+  color: #0f7d13;
+}
+
+table tr.parent_com {
+  background-color: #8BC34A;
+  color: #fff;
+}
