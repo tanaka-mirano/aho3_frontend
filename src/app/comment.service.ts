@@ -38,7 +38,7 @@ postreplyComment(user_name: string, user_id: string, comment: string, parent_id:
     /**コメント取得 */
 getComment(user_id:string): Observable<com_info[]>{
   //const url = `${this.commentUrl}/${user_id}`;
-  return this.http.get<com_info[]>(`${this.commentUrl}/?user_id=${user_id}`);
+  return this.http.get<com_info[]>(`${this.commentUrl}?user_id=${user_id}`);
 
 }
 
