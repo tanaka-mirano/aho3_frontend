@@ -21,7 +21,7 @@
 
             <p *ngIf="!reply_button && !edit_button">新規投稿<br>
                 <textarea rows="10" cols="40" name="comment_area" placeholder="100文字以下で入力してください"
-                    [(ngModel)]="user_info.comment"></textarea>
+                    [(ngModel)]="user_info.comment" onkeyup="textcount(value);"></textarea>
             </p>
 
             <p *ngIf="edit_button">編集<br>

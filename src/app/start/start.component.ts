@@ -63,7 +63,7 @@ export class StartComponent implements OnInit {
   delete_com = false;
   reply_com_btn = false;  //返信コメントを表示するかしないか
 
-  com_length = [...this.user_info.comment].length;  //文字数
+  com_length = 0;  //文字数
 
   com_info: com_info[] = [];          //取得したコメント情報
 
@@ -123,6 +123,12 @@ export class StartComponent implements OnInit {
 
   });
   }
+
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////
+  textcount(text:string){
+    this.com_length = text.length;
+  }
+  
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
