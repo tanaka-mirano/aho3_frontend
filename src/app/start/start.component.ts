@@ -105,6 +105,7 @@ export class StartComponent implements OnInit {
         (window as any).liff.getProfile()
         .then((profile:profile) => {
           this.user_info.user_name = profile.displayName;
+          this.user_info.user_id = profile.userId;
           console.log(this.user_info.user_name);
   
         });
