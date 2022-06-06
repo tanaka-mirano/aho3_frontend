@@ -6,7 +6,7 @@ import { CommentService } from '../comment.service';
 import { com_info } from '../get_comment';
 import { parent_info } from '../parent_info';
 import { profile } from '../profile';
-import { doesNotReject } from 'assert';
+
 
 @Component({
   selector: 'app-start',
