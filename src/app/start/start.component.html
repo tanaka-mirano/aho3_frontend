@@ -103,7 +103,7 @@
                 <td align=”center”>{{comment.user_name}}</td>
                 <td>{{comment.updated_at}}</td>
 
-                <br><br>
+                <td>
                 <button [class.nomal]="!comment.push_b" [class.good]="comment.push_b"
                     (click)="good(comment.com_id,comment.push_b)">♡</button> {{comment.good_num}}
                 <!--評価ボタン-->
@@ -115,16 +115,7 @@
                     (click)="appear_rep(comment.com_id,comment.comment,comment.user_name,comment.updated_at)">返信コメント</button>
                 <button class="edit_com" (click)="edit_com(comment.comment,comment.com_id)">編集</button>
                 <!--返信コメント表示ボタン：返信コメントがあるとき-->
-
-                <!--
-                    <div *ngIf="reply_button || edit_button">
-                        <td>{{parent_info.user_name}}</td>
-                        <textarea rows="10" cols="40" name="comment_area" placeholder="100文字以下で入力してください" 
-                        [(ngModel)]="user_info.comment"  value="pre_com"></textarea>
-                        <input *ngIf="reply_button" type="submit" value="返信" (click)="submit_reply(comment.com_id)">
-                        <input *ngIf="edit_button" type="submit" value="送信" (click)="submit_edit(comment.com_id,comment.comment)">
-                    </div>
-                    -->
+                </td>
 
             </tr>
         </table>
