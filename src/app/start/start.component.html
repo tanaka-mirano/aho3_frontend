@@ -29,9 +29,9 @@
                 </td>
 
                 <td>
-                    <input  *ngIf="!reply_button && !edit_button" type="submit" value="送信" (click)="submit_userinfo()" />
-                    <input class="update_button" *ngIf="edit_button" type="submit" value="更新" (click)="submit_edit()" />
-                    <input class="repsubmit_button" *ngIf="reply_button" type="submit" value="返信" (click)="submit_reply()" />
+                    <button *ngIf="!reply_button && !edit_button" class="submit" (click)="submit_userinfo()">送信</button>
+                    <button *ngIf="edit_button" class="update" (click)="submit_edit()">更新</button>
+                    <button *ngIf="reply_button" class="submit_reply" (click)="submit_reply()">返信</button>
                 </td>
 
 
