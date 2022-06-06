@@ -254,15 +254,20 @@ export class StartComponent implements OnInit {
   ////////////////////////////////////////////////////////////////////////////////////////////////////
 
   /**コメント削除 */
-  delete(com_id: number): void {
+  delete(com_id: number, user_id: string): void {
 
-    if (confirm('本当に削除しますか？')) {
-      var user_id = this.user_info.user_id;
+    if (user_id == this.user_info.user_id) {
+      if (confirm('本当に削除しますか？')) {
+        var user_id = this.user_info.user_id;
 
-      this.commentService.deleteComment(com_id, user_id)
-        .subscribe();
-    } else {
-      console.log('キャンセルボタンが押されました。')
+        this.commentService.deleteComment(com_id, user_id)
+          .subscribe();
+      } else {
+        console.log('キャンセルボタンが押されました。')
+      }
+
+    }else{
+      alert("投稿した本人のみ削除可能です");
     }
 
 
