@@ -62,15 +62,15 @@
             <!--返信表示ボタン押下時：親コメントの表示-->
             <tr class="parent_com" *ngIf="reply_com_btn">
                 <td>{{parent_info.comment}}</td>
-                <td>{{parent_info.user_name}}</td>
-                <td>{{parent_info.updated_at}}</td>
+                <td align="center">{{parent_info.user_name}}</td>
+                <td align="center">{{parent_info.updated_at}}</td>
                 <td></td>
             </tr>
 
             <tr *ngFor="let comment of com_info">
                 <td>{{comment.comment}}</td>
                 <td align="center">{{comment.user_name}}</td>
-                <td>{{comment.updated_at}}</td>
+                <td align="center">{{comment.updated_at}}</td>
 
                 <td>
                     <!--評価ボタン-->
