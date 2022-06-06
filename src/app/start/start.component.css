@@ -114,10 +114,6 @@ ul .message {
 
 }
 
-form {
-  position: relative;
-  left: 20%;
-}
 
 textarea {
   border: 0;
@@ -186,6 +182,13 @@ textarea {
 
 }
 
+/*新規投稿入力フォームに戻るボタン*/
+.back_newarea{
+  border: none;
+  background: transparent;
+  color: #8BC34A;
+  text-decoration: underline;
+}
 
 /*削除ボタン*/
 .delete {

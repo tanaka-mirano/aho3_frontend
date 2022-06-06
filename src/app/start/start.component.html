@@ -13,9 +13,9 @@
 
         <table class="edit_table">
             <tr>
-                <th *ngIf="!reply_button && !edit_button">comment area</th>
-                <th *ngIf="edit_button" [class.edit_comment]="edit_button">edit area</th>
-                <th *ngIf="reply_button" [class.reply_comment]="reply_button">reply area</th>
+                <th *ngIf="!reply_button && !edit_button">新規投稿</th>
+                <th *ngIf="edit_button" [class.edit_comment]="edit_button">編集</th>
+                <th *ngIf="reply_button" [class.reply_comment]="reply_button">返信</th>
             </tr>
 
             <tr>
@@ -25,11 +25,11 @@
                             [(ngModel)]="user_info.comment" onkeyup="textcount(this)"></textarea>
                     </p>
                     <p *ngIf="edit_button" [class.edit_comment]="edit_button"><br>
-                        <textarea rows="10" cols="40" name="comment_area" placeholder="100文字以下で入力してください"
+                        <textarea rows="10" cols="40" name="comment_area" placeholder="編集内容を入力してください"
                             [(ngModel)]="user_info.comment">{{edit_comment}}</textarea>
                     </p>
                     <p *ngIf="reply_button" [class.reply_comment]="reply_button"><br>
-                        <textarea rows="10" cols="40" name="comment_area" placeholder="100文字以下で入力してください"
+                        <textarea rows="10" cols="40" name="comment_area" placeholder="返信内容を入力してください"
                             [(ngModel)]="user_info.comment"></textarea>
                     </p>
                 </td>
@@ -38,6 +38,7 @@
                     <button *ngIf="!reply_button && !edit_button" class="submit" (click)="submit_userinfo()">送信</button>
                     <button *ngIf="edit_button" class="update" (click)="submit_edit()">更新</button>
                     <button *ngIf="reply_button" class="submit_reply" (click)="submit_reply()">返信</button>
+                    <button *ngIf="reply_button || edit_button" class="back_newarea" (click)="back_newarea()">新規投稿フォームへ</button>
                 </td>
 
 
