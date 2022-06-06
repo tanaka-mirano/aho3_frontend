@@ -69,7 +69,7 @@
                 <td></td>
             </tr>
 
-            <tr *ngFor="let comment of com_info">
+            <tr *ngFor="let comment of com_info| async">
                 <td>{{comment.comment}}</td>
                 <td align="center">{{comment.user_name}}</td>
                 <td align="center">{{comment.updated_at}}</td>

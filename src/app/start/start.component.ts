@@ -144,7 +144,7 @@ export class StartComponent implements OnInit {
 
   /**コメント新規投稿 */
   submit_userinfo() {
-    alert('投稿完了');
+    //alert('投稿完了');
 
     if (this.com_length > 100) {
       alert('入力できるのは100文字までです');
@@ -155,18 +155,9 @@ export class StartComponent implements OnInit {
     var comment = this.user_info.comment;
 
     this.commentService.postnewComment(user_name, user_id, comment)
-      .subscribe(()=>
-      this.commentService.getComment(user_id)
-      .subscribe(com_info => {  //返ってきたものcom_infoでこれから処理するよ
-        this.com_info = com_info; //インターフェースの配列に返ってきた値いれるよ
-
-      })
-      );
+      .subscribe();
 
       window.location.reload();
-
-
-    
 
   }
 
@@ -197,14 +188,16 @@ export class StartComponent implements OnInit {
     var user_name = this.user_info.user_name;
     var user_id = this.user_info.user_id;
 
-    //var user_id = "lemon";
-    //var user_name = "レモン";
-
     var comment = this.user_info.comment;
 
 
     this.commentService.postreplyComment(user_name, user_id, comment, parent_id)
       .subscribe();
+
+      
+
+
+      
 
   }
 
