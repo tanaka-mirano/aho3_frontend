@@ -18,11 +18,11 @@
                         <textarea rows="10" cols="40" name="comment_area" placeholder="100文字以下で入力してください"
                             [(ngModel)]="user_info.comment" onkeyup="textcount(this)"></textarea>
                     </p>
-                    <p *ngIf="edit_button">編集<br>
+                    <p *ngIf="edit_button"  [class.edit_comment]="edit_button">編集<br>
                         <textarea rows="10" cols="40" name="comment_area" placeholder="100文字以下で入力してください"
                             [(ngModel)]="user_info.comment">{{edit_comment}}</textarea>
                     </p>
-                    <p *ngIf="reply_button">返信投稿<br>
+                    <p *ngIf="reply_button" [class.reply_comment]="reply_button">返信投稿<br>
                         <textarea rows="10" cols="40" name="comment_area" placeholder="100文字以下で入力してください"
                             [(ngModel)]="user_info.comment"></textarea>
                     </p>
@@ -94,7 +94,7 @@
 
             <tr *ngFor="let comment of com_info">
                 <td>{{comment.comment}}</td>
-                <td>{{comment.user_name}}</td>
+                <td align=”center”>{{comment.user_name}}</td>
                 <td>{{comment.updated_at}}</td>
 
                 <br><br>
