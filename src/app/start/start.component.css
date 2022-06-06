@@ -249,6 +249,12 @@ textarea {
   text-decoration: underline;
 }
 
+.none{
+  border: none;
+  background: transparent;
+  color: #8BC34A;
+}
+
 /*入力欄*/
 table.edit_table{
   border-collapse: collapse;
