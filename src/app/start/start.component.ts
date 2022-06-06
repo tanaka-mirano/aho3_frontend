@@ -155,14 +155,16 @@ export class StartComponent implements OnInit {
     var comment = this.user_info.comment;
 
     this.commentService.postnewComment(user_name, user_id, comment)
-      .subscribe();
-
-
-    this.commentService.getComment(user_id)
+      .subscribe(()=>
+      this.commentService.getComment(user_id)
       .subscribe(com_info => {  //返ってきたものcom_infoでこれから処理するよ
         this.com_info = com_info; //インターフェースの配列に返ってきた値いれるよ
 
-      });
+      })
+      );
+
+
+    
 
   }
 
