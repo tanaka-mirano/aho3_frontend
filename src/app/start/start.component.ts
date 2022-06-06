@@ -217,15 +217,20 @@ export class StartComponent implements OnInit {
   ////////////////////////////////////////////////////////////////////////////////////////////////////
 
   /** コメント編集ボタン押下*/
-  edit_com(comment: string, com_id: number) {
+  edit_com(comment: string, com_id: number,user_id:string) {
 
-    if (this.reply_button == true) {
-      this.reply_button = false;
+    if(user_id==this.user_info.user_id){
+      if (this.reply_button == true) {
+        this.reply_button = false;
+      }
+      this.edit_button = true;
+      this.edit_comment = comment;
+      this.edit_com_id = com_id;
+
+    }else{
+      alert('編集できるのは本人のみです');
     }
-
-    this.edit_button = true;
-    this.edit_comment = comment;
-    this.edit_com_id = com_id;
+    
 
   }
 
