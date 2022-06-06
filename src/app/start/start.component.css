@@ -133,7 +133,8 @@ textarea {
   border-radius: 0.3em;
   /* 角丸 */
   color: #fff;
-  margin-left: 10px;
+  margin-left: 30px;
+  margin-top: 30px;
 }
 
 
@@ -240,12 +241,12 @@ table.edit_table tr {
 table.edit_table tr:last-child {
   border-bottom: 2px solid #18521b;
 }
-/*
+
 table.edit_table th,
 table.com_table td {
   padding: 1em 10px 1em 1em;
 }
-*/
+
 
 tbody th {
   color: #0f7d13;
