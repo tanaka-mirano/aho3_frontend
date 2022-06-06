@@ -163,9 +163,11 @@ submit_userinfo() {
 
 /**返信ボタン押下 */
 reply(com_id: number): void {
+  if(this.edit_button==true){
+    this.edit_button=false;
+  }
   this.reply_button = true;
   this.reply_com_id = com_id;
-
 }
 
 /**コメント返信実行 */
@@ -213,6 +215,11 @@ good(com_id: number, push_b: boolean): void {
 
 /** コメント編集ボタン押下*/
 edit_com(comment: string, com_id: number) {
+
+  if(this.reply_button==true){
+    this.reply_button=false;
+  }
+
   this.edit_button = true;
   this.edit_comment = comment;
   this.edit_com_id = com_id;

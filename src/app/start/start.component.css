@@ -119,6 +119,12 @@ textarea {
 
 }
 
+/*textarea見出し*/
+.reply_comment{
+  color: #d6dd75;
+
+}
+
 /*送信ボタン*/
 input[type="submit"] {
   border: 1px solid #8BC34A;
