@@ -16,6 +16,7 @@
                 <th *ngIf="!reply_button && !edit_button">新規投稿</th>
                 <th *ngIf="edit_button" [class.edit_comment]="edit_button">編集</th>
                 <th *ngIf="reply_button" [class.reply_comment]="reply_button">返信</th>
+
             </tr>
 
             <tr>
@@ -26,11 +27,14 @@
                     </p>
                     <p *ngIf="edit_button" [class.edit_comment]="edit_button"><br>
                         <textarea rows="10" cols="40" name="comment_area" placeholder="編集内容を入力してください"
-                            [(ngModel)]="user_info.comment">{{edit_comment}}</textarea>
+                            >{{edit_comment}}</textarea>
                     </p>
                     <p *ngIf="reply_button" [class.reply_comment]="reply_button"><br>
                         <textarea rows="10" cols="40" name="comment_area" placeholder="返信内容を入力してください"
                             [(ngModel)]="user_info.comment"></textarea>
+                    </p>
+                    <p *ngIf="done_com">
+                        {{done}}<button  class="done" (click)="done_edit()">OK</button>
                     </p>
                 </td>
 
@@ -39,7 +43,8 @@
                     <button *ngIf="edit_button" class="update" (click)="submit_edit()">更新</button>
                     <button *ngIf="reply_button" class="submit_reply" (click)="submit_reply()">返信</button>
                     <br>
-                    <button *ngIf="reply_button || edit_button" class="back_newarea" (click)="back_newarea()">新規投稿フォームへ</button>
+                    <button *ngIf="reply_button || edit_button" class="back_newarea"
+                        (click)="back_newarea()">新規投稿フォームへ</button>
                 </td>
 
 
@@ -69,7 +74,7 @@
                 <td></td>
             </tr>
 
-            <tr *ngFor="let comment of com_info| async">
+            <tr *ngFor="let comment of com_info">
                 <td>{{comment.comment}}</td>
                 <td align="center">{{comment.user_name}}</td>
                 <td align="center">{{comment.updated_at}}</td>
@@ -83,20 +88,19 @@
                     <button class="reply" (click)="reply(comment.com_id)">返信</button>
 
                     <!--編集ボタン-->
-                    <button class="edit_com" (click)="edit_com(comment.comment,comment.com_id,comment.user_id)">編集</button>
+                    <button class="edit_com"
+                        (click)="edit_com(comment.comment,comment.com_id,comment.user_id)">編集</button>
 
-                     <!--返信コメント表示ボタン：返信コメントがあるとき-->
-                     <button *ngIf="comment.rep_com==true" class="appear_rep"
-                     (click)="appear_rep(comment.com_id,comment.comment,comment.user_name,comment.updated_at)">返信コメント</button>
+                    <!--返信コメント表示ボタン：返信コメントがあるとき-->
+                    <button *ngIf="comment.rep_com==true" class="appear_rep"
+                        (click)="appear_rep(comment.com_id,comment.comment,comment.user_name,comment.updated_at)">返信コメント</button>
 
-                     <button *ngIf="comment.rep_com==false" class="none">--------------------</button>
-                    
+                    <button *ngIf="comment.rep_com==false" class="none">---------------------</button>
+
                     <!--削除ボタン-->
                     <button class="delete" (click)="delete(comment.com_id,comment.user_id)">×</button>
-                    
-                    
-                    
-                   
+
+
                 </td>
 
             </tr>
@@ -104,16 +108,10 @@
 
         <button *ngIf="reply_com_btn" class="back_btn" (click)="back()">back</button>
 
-
-
-
     </div>
 
 
 </div>
-
-
-
 
 
 <!--
@@ -136,7 +134,7 @@
 -->
 
 
- <!--
+<!--
         </table>
         
        

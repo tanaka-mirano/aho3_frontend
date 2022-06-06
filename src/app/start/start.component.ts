@@ -6,6 +6,7 @@ import { CommentService } from '../comment.service';
 import { com_info } from '../get_comment';
 import { parent_info } from '../parent_info';
 import { profile } from '../profile';
+import { doesNotReject } from 'assert';
 
 @Component({
   selector: 'app-start',
@@ -63,6 +64,7 @@ export class StartComponent implements OnInit {
   edit_button = false;
   delete_com = false;
   reply_com_btn = false;  //返信コメントを表示するかしないか
+  done_com = false;  //投稿完了したか
 
   com_length = 0;  //文字数
 
@@ -76,6 +78,9 @@ export class StartComponent implements OnInit {
   edit_comment = "";    //編集前のコメント
 
   grandparent_arr: any[] = [];
+
+  done="";
+
 
   ngOnInit(): void {
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -157,7 +162,8 @@ export class StartComponent implements OnInit {
     this.commentService.postnewComment(user_name, user_id, comment)
       .subscribe();
 
-      window.location.reload();
+    this.done="投稿しました";
+     // window.location.reload();
 
   }
 
@@ -193,6 +199,9 @@ export class StartComponent implements OnInit {
 
     this.commentService.postreplyComment(user_name, user_id, comment, parent_id)
       .subscribe();
+
+    this.done_com=true;
+    this.done="返信しました";
 
       
 
@@ -256,6 +265,9 @@ export class StartComponent implements OnInit {
 
     this.commentService.putComment(com_id, user_id, comment)
       .subscribe();
+
+      this.done_com=true;
+      this.done="編集しました";
 
   }
 
@@ -357,4 +369,9 @@ export class StartComponent implements OnInit {
     this.reply_button = false;
   }
 
+  done_edit():void{
+    this.done_com=false;
+  }
+
 }
+//////////////////////////////////////////////////////////////////////////////
