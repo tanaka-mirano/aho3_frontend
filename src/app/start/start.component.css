@@ -63,6 +63,22 @@ ul .message {
 
 }
 
+
+.nomal {
+  outline: none;
+  border: none;
+  background: transparent;
+  color: #8BC34A;
+}
+
+.good {
+  outline: none;
+  color: #ffafe4ce;
+  border: none;
+  background: transparent;
+
+}
+
 .back {
   /*background-color: #fbfd93;*/
   width: 100%;
@@ -214,27 +230,16 @@ textarea {
 
 }
 
-.nomal {
-  outline: none;
-  border: none;
-  background: transparent;
 
-}
-
-.good {
-  outline: none;
-  color: #ffafe4ce;
-  border: none;
-  background: transparent;
-
-}
-
+/*返信コメント表示ボタン*/
 .appear_rep{
   border: none;
   background: transparent;
   color: #8BC34A;
+  text-decoration: underline;
 }
 
+/*入力欄*/
 table.edit_table{
   border-collapse: collapse;
   margin: 0 auto;
@@ -272,13 +277,7 @@ table.edit_table tr.parent_com {
 
 
 
-
-
-
-
-
-
-
+/*コメント表示欄*/
 table.com_table{
   border-collapse: collapse;
   margin: 0 auto;
