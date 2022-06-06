@@ -13,20 +13,22 @@
 
         <table class="edit_table">
             <tr>
-                <th>comment area</th>
+                <th *ngIf="!reply_button && !edit_button">comment area</th>
+                <th *ngIf="edit_button" [class.edit_comment]="edit_button">edit area</th>
+                <th *ngIf="reply_button" [class.reply_comment]="reply_button">reply area</th>
             </tr>
-            
+
             <tr>
                 <td>
-                    <p *ngIf="!reply_button && !edit_button">新規投稿<br>
-                        <textarea rows="10" cols="40" name="comment_area" placeholder="100文字以下で入力してください"
+                    <p *ngIf="!reply_button && !edit_button"><br>
+                        <textarea rows="10" cols="60" name="comment_area" placeholder="100文字以下で入力してください"
                             [(ngModel)]="user_info.comment" onkeyup="textcount(this)"></textarea>
                     </p>
-                    <p *ngIf="edit_button"  [class.edit_comment]="edit_button">編集<br>
+                    <p *ngIf="edit_button"  [class.edit_comment]="edit_button"><br>
                         <textarea rows="10" cols="40" name="comment_area" placeholder="100文字以下で入力してください"
                             [(ngModel)]="user_info.comment">{{edit_comment}}</textarea>
                     </p>
-                    <p *ngIf="reply_button" [class.reply_comment]="reply_button">返信投稿<br>
+                    <p *ngIf="reply_button" [class.reply_comment]="reply_button"><br>
                         <textarea rows="10" cols="40" name="comment_area" placeholder="100文字以下で入力してください"
                             [(ngModel)]="user_info.comment"></textarea>
                     </p>
