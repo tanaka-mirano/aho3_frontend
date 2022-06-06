@@ -163,6 +163,8 @@ export class StartComponent implements OnInit {
       })
       );
 
+      window.location.reload();
+
 
     
 
