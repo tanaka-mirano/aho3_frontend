@@ -117,7 +117,6 @@ export class StartComponent implements OnInit {
 
     var user_id = this.user_info.user_id;
 
-    //var user_id = "apple";
     this.commentService.getComment(user_id)
       .subscribe(com_info => {  //返ってきたものcom_infoでこれから処理するよ
         this.com_info = com_info; //インターフェースの配列に返ってきた値いれるよ
@@ -157,6 +156,13 @@ export class StartComponent implements OnInit {
 
     this.commentService.postnewComment(user_name, user_id, comment)
       .subscribe();
+
+
+    this.commentService.getComment(user_id)
+      .subscribe(com_info => {  //返ってきたものcom_infoでこれから処理するよ
+        this.com_info = com_info; //インターフェースの配列に返ってきた値いれるよ
+
+      });
 
   }
 
