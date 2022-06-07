@@ -254,6 +254,8 @@ export class StartComponent implements OnInit {
       alert('入力できるのは100文字までです');
     };
 
+    console.log(document.getElementById('get_edit'));
+
     var com_id = this.edit_com_id;
 
     //var user_name = this.user_info.user_name;

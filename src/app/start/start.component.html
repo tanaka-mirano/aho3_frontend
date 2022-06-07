@@ -25,11 +25,11 @@
                         <textarea rows="10" cols="60" name="comment_area" placeholder="100文字以下で入力してください"
                             [(ngModel)]="user_info.comment" onkeyup="textcount(this)"></textarea>
                     </p>
-                    <p *ngIf="edit_button" [class.edit_comment]="edit_button"><br>
+                    <p *ngIf="edit_button" id="get_edit" [class.edit_comment]="edit_button"><br>
                         <textarea rows="10" cols="40" name="comment_area" placeholder="編集内容を入力してください"
                             >{{edit_comment}}</textarea>
                     </p>
-                    <p *ngIf="reply_button" [class.reply_comment]="reply_button"><br>
+                    <p *ngIf="reply_button"  [class.reply_comment]="reply_button"><br>
                         <textarea rows="10" cols="40" name="comment_area" placeholder="返信内容を入力してください"
                             [(ngModel)]="user_info.comment"></textarea>
                     </p>
