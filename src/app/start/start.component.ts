@@ -169,8 +169,8 @@ export class StartComponent implements OnInit {
       });
 
 
-    this.done = "投稿しました";
-    // window.location.reload();
+  
+    window.location.reload();
 
   }
 
@@ -190,7 +190,7 @@ export class StartComponent implements OnInit {
   submit_reply(): void {
     this.reply_button = false;
 
-    alert('返信完了');
+    //alert('返信完了');
 
     if (this.com_length > 100) {
       alert('入力できるのは100文字までです');
@@ -207,14 +207,15 @@ export class StartComponent implements OnInit {
     this.commentService.postreplyComment(user_name, user_id, comment, parent_id)
       .subscribe();
 
-    this.done_com = true;
-    this.done = "返信しました";
+   
 
     this.commentService.getComment(user_id)
       .subscribe(com_info => {  //返ってきたものcom_infoでこれから処理するよ
         this.com_info = com_info; //インターフェースの配列に返ってきた値いれるよ
 
       });
+
+      window.location.reload();
 
 
 
@@ -284,8 +285,8 @@ export class StartComponent implements OnInit {
     this.commentService.putComment(com_id, user_id, comment)
       .subscribe();
 
-    this.done_com = true;
-    this.done = "編集しました";
+      window.location.reload();
+    
 
   }
 
