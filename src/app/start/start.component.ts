@@ -254,8 +254,10 @@ export class StartComponent implements OnInit {
       alert('入力できるのは100文字までです');
     };
 
+    /*
     const get_edit=<HTMLInputElement>document.getElementById('get_edit');
     var comment=get_edit.value;
+    */
 
     var com_id = this.edit_com_id;
 
@@ -264,7 +266,7 @@ export class StartComponent implements OnInit {
 
     //var user_id = "apple";
 
-   // var comment = this.user_info.comment;
+    var comment = this.edit_comment;
 
     this.commentService.putComment(com_id, user_id, comment)
       .subscribe();
