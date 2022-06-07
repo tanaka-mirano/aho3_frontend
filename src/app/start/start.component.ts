@@ -215,12 +215,6 @@ export class StartComponent implements OnInit {
 
       });
 
-      window.location.reload();
-
-
-
-
-
 
   }
 
@@ -285,7 +279,19 @@ export class StartComponent implements OnInit {
     this.commentService.putComment(com_id, user_id, comment)
       .subscribe();
 
-      window.location.reload();
+
+      var cominfo_length = this.com_info.length;
+
+        for (let i = 0; i < cominfo_length; i++) {
+          if (com_id == this.com_info[i].com_id) {
+            this.com_info[i].comment=comment;                 
+            
+          }
+        }
+
+
+
+      //window.location.reload();
     
 
   }
