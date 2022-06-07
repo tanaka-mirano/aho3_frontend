@@ -79,7 +79,7 @@ export class StartComponent implements OnInit {
 
   grandparent_arr: any[] = [];
 
-  done="";
+  done = "";
 
 
   ngOnInit(): void {
@@ -162,8 +162,15 @@ export class StartComponent implements OnInit {
     this.commentService.postnewComment(user_name, user_id, comment)
       .subscribe();
 
-    this.done="投稿しました";
-     // window.location.reload();
+    this.commentService.getComment(user_id)
+      .subscribe(com_info => {  //返ってきたものcom_infoでこれから処理するよ
+        this.com_info = com_info; //インターフェースの配列に返ってきた値いれるよ
+
+      });
+
+
+    this.done = "投稿しました";
+    // window.location.reload();
 
   }
 
@@ -200,13 +207,19 @@ export class StartComponent implements OnInit {
     this.commentService.postreplyComment(user_name, user_id, comment, parent_id)
       .subscribe();
 
-    this.done_com=true;
-    this.done="返信しました";
+    this.done_com = true;
+    this.done = "返信しました";
 
-      
+    this.commentService.getComment(user_id)
+      .subscribe(com_info => {  //返ってきたものcom_infoでこれから処理するよ
+        this.com_info = com_info; //インターフェースの配列に返ってきた値いれるよ
+
+      });
 
 
-      
+
+
+
 
   }
 
@@ -229,9 +242,9 @@ export class StartComponent implements OnInit {
   ////////////////////////////////////////////////////////////////////////////////////////////////////
 
   /** コメント編集ボタン押下*/
-  edit_com(comment: string, com_id: number,user_id:string) {
+  edit_com(comment: string, com_id: number, user_id: string) {
 
-    if(user_id==this.user_info.user_id){
+    if (user_id == this.user_info.user_id) {
       if (this.reply_button == true) {
         this.reply_button = false;
       }
@@ -239,10 +252,10 @@ export class StartComponent implements OnInit {
       this.edit_comment = comment;
       this.edit_com_id = com_id;
 
-    }else{
+    } else {
       alert('編集できるのは本人のみです');
     }
-    
+
 
   }
 
@@ -271,8 +284,8 @@ export class StartComponent implements OnInit {
     this.commentService.putComment(com_id, user_id, comment)
       .subscribe();
 
-      this.done_com=true;
-      this.done="編集しました";
+    this.done_com = true;
+    this.done = "編集しました";
 
   }
 
@@ -285,15 +298,15 @@ export class StartComponent implements OnInit {
       if (confirm('本当に削除しますか？')) {
         //var del_element = this.com_info.find(value => value.com_id >= com_id);
 
-        var cominfo_length=this.com_info.length;
+        var cominfo_length = this.com_info.length;
 
-        for(let i=0;i<cominfo_length;i++){
-          if(com_id==this.com_info[i].com_id){
-            this.com_info.splice(i,1);
+        for (let i = 0; i < cominfo_length; i++) {
+          if (com_id == this.com_info[i].com_id) {
+            this.com_info.splice(i, 1);                  //フロントからも削除してあげることで即時反映される
           }
         }
-        
-        
+
+
 
         var user_id = this.user_info.user_id;
 
@@ -305,7 +318,7 @@ export class StartComponent implements OnInit {
         console.log('キャンセルボタンが押されました。')
       }
 
-    }else{
+    } else {
       alert("投稿した本人のみ削除可能です");
     }
 
@@ -388,8 +401,8 @@ export class StartComponent implements OnInit {
     this.reply_button = false;
   }
 
-  done_edit():void{
-    this.done_com=false;
+  done_edit(): void {
+    this.done_com = false;
   }
 
 }
