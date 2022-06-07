@@ -283,10 +283,24 @@ export class StartComponent implements OnInit {
 
     if (user_id == this.user_info.user_id) {
       if (confirm('本当に削除しますか？')) {
+        //var del_element = this.com_info.find(value => value.com_id >= com_id);
+
+        var cominfo_length=this.com_info.length;
+
+        for(let i=0;i<cominfo_length;i++){
+          if(com_id==this.com_info[i].com_id){
+            this.com_info.splice(i,1);
+          }
+        }
+        
+        
+
         var user_id = this.user_info.user_id;
 
         this.commentService.deleteComment(com_id, user_id)
-          .subscribe();
+          .subscribe(
+
+          );
       } else {
         console.log('キャンセルボタンが押されました。')
       }
