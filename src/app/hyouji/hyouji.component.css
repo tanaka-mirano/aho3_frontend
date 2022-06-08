@@ -98,10 +98,10 @@ body {
   position: absolute;
   top: 50%;
   /*50%だと親要素の中心に上端が来る。（transformを使用するとずれたため40%）ここをmargin-topにすると親要素の下に来る*/
-  left: 50%;
+  left: 40%;
   /*50%だと親要素の中心に左端が来る*/
   transform: translate(-50%, -50%);
-  margin-top: 500px;
+  margin-top: 400px;
 
   animation: zoomIn 0.7s ease-in-out forwards;
 
