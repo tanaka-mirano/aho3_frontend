@@ -217,6 +217,8 @@ export class StartComponent implements OnInit {
       }
     }
 
+    this.user_info.comment="";
+
 
 
 
@@ -312,7 +314,7 @@ export class StartComponent implements OnInit {
       }
     }
 
-    this.user_info.comment="";
+    
 
 
 
