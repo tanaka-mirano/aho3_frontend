@@ -96,7 +96,7 @@
 
                     <!--返信コメント表示ボタン：返信コメントがあるとき-->
                     <button *ngIf="comment.rep_com==true" class="appear_rep"
-                        (click)="appear_rep(comment.com_id,comment.comment,comment.user_name,comment.updated_at)">コメント</button>
+                        (click)="appear_rep(comment.com_id,comment.comment,comment.user_name,comment.updated_at)">返信コメント</button>
 
                     <button *ngIf="comment.rep_com==false" class="none">---------------</button>
 

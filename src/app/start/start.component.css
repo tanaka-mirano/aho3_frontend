@@ -256,6 +256,7 @@ textarea {
   background: transparent;
   color: #8BC34A;
   text-decoration: underline;
+  font-size: 10px;
 }
 
 .none{
