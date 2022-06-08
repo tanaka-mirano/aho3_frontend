@@ -248,13 +248,13 @@ textarea {
 /*backボタン*/
 .back_btn {
   position: relative;
-  float:right;
   border: 1px solid #8BC34A;
   /* 枠線 */
   background-color: #8BC34A;
   border-radius: 0.3em;
   /* 角丸 */
   color: #fff;
+  text-align:center;
 
 }
 
