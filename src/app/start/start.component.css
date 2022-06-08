@@ -240,7 +240,7 @@ textarea {
 /*backボタン*/
 .back_btn {
   position: relative;
-  left: 60%;
+  float:right;
   border: 1px solid #8BC34A;
   /* 枠線 */
   background-color: #8BC34A;
