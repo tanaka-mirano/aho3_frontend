@@ -287,11 +287,16 @@ table.edit_table tr:last-child {
   border-bottom: 2px solid #18521b;
 }
 
+table.edit_table th,td{
+  position: sticky;
+  top: 0px;
+
+}
+
 table.edit_table th,
 table.com_table td {
   padding: 1em 10px 1em 1em;
-  position: sticky;
-  top: 0px;
+  
 }
 
 
