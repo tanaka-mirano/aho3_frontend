@@ -73,14 +73,18 @@
             <tr class="parent_com" *ngIf="reply_com_btn">
                 <td>{{parent_info.comment}}</td>
                 <td align="center">{{parent_info.user_name}}</td>
+                <!--
                 <td align="center">{{parent_info.updated_at}}</td>
+                -->
                 <td></td>
             </tr>
 
             <tr *ngFor="let comment of com_info">
-                <td class="table_comment">{{comment.comment}}</td>
+                <td class="table_comment">{{comment.comment}}<br><span class="updated_at">{{comment.updated_at}}</span></td>
                 <td align="center" class="table_name">{{comment.user_name}}</td>
+                <!--
                 <td align="center" class="table_time">{{comment.updated_at}}</td>
+                -->
 
                 <td>
                     <!--評価ボタン-->

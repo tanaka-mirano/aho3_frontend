@@ -355,3 +355,8 @@ td.table_comment{
 .table_time{
   font-size: 15px;
 }
+
+.updated_at{
+  font-size:8px;
+  color:#b1b1b1ce;
+}
