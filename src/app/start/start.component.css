@@ -167,13 +167,14 @@ textarea {
 .submit_reply {
   position: relative;
   margin-top: 30px;
-  float:right;
+  
   border: 1px solid #d6dd75;
 
   background-color: #d6dd75;
   border-radius: 0.3em;
  
   color: #fff;
+  display:inline-block;
 
 }
 
@@ -181,13 +182,14 @@ textarea {
 .update {
   position: relative;
   margin-top: 30px;
-  float:right;
+  
   border: 1px solid #94cfd3;
  
   background-color: #94cfd3;
   border-radius: 0.3em;
 
   color: #fff;
+  display:inline-block;
 
 }
 
@@ -197,8 +199,9 @@ textarea {
   background: transparent;
   color: #8BC34A;
   text-decoration: underline;
-  float:right;
+  
   font-size:10px;
+  display:inline-block;
 }
 
 /*削除ボタン*/
