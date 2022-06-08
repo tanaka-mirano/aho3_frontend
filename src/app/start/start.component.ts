@@ -78,7 +78,7 @@ export class StartComponent implements OnInit {
 
   grandparent_arr: any[] = [];
 
- 
+
 
 
   ngOnInit(): void {
@@ -148,28 +148,29 @@ export class StartComponent implements OnInit {
 
   /**コメント新規投稿 */
   submit_userinfo() {
-    
+
 
     if (this.user_info.comment.length > 100) {
       alert('入力できるのは100文字までです');
+    } else {
+
+      var user_name = this.user_info.user_name;
+      var user_id = this.user_info.user_id;
+      var comment = this.user_info.comment;
+
+      this.commentService.postnewComment(user_name, user_id, comment)
+        .subscribe();
+
+      this.commentService.getComment(user_id)
+        .subscribe(com_info => {  //返ってきたものcom_infoでこれから処理するよ
+          this.com_info = com_info; //インターフェースの配列に返ってきた値いれるよ
+
+        });
+
+
+
+      window.location.reload();
     };
-
-    var user_name = this.user_info.user_name;
-    var user_id = this.user_info.user_id;
-    var comment = this.user_info.comment;
-
-    this.commentService.postnewComment(user_name, user_id, comment)
-      .subscribe();
-
-    this.commentService.getComment(user_id)
-      .subscribe(com_info => {  //返ってきたものcom_infoでこれから処理するよ
-        this.com_info = com_info; //インターフェースの配列に返ってきた値いれるよ
-
-      });
-
-
-
-    window.location.reload();
 
   }
 
@@ -195,28 +196,29 @@ export class StartComponent implements OnInit {
 
     if (this.user_info.comment.length > 100) {
       alert('入力できるのは100文字までです');
+    } else {
+
+      var parent_id = this.reply_com_id;
+
+      var user_name = this.user_info.user_name;
+      var user_id = this.user_info.user_id;
+
+      var comment = this.user_info.comment;
+
+
+      this.commentService.postreplyComment(user_name, user_id, comment, parent_id)
+        .subscribe();
+
+      var cominfo_length = this.com_info.length;
+
+      for (let i = 0; i < cominfo_length; i++) {
+        if (parent_id == this.com_info[i].com_id) {
+          this.com_info[i].rep_com = true;
+        }
+      }
     };
 
-    var parent_id = this.reply_com_id;
-
-    var user_name = this.user_info.user_name;
-    var user_id = this.user_info.user_id;
-
-    var comment = this.user_info.comment;
-
-
-    this.commentService.postreplyComment(user_name, user_id, comment, parent_id)
-      .subscribe();
-
-    var cominfo_length = this.com_info.length;
-
-    for (let i = 0; i < cominfo_length; i++) {
-      if (parent_id == this.com_info[i].com_id) {
-        this.com_info[i].rep_com = true;
-      }
-    }
-
-    this.user_info.comment="";
+    this.user_info.comment = "";
 
 
 
@@ -273,7 +275,7 @@ export class StartComponent implements OnInit {
       alert('編集できるのは本人のみです');
     }
 
-    
+
 
 
   }
@@ -282,7 +284,7 @@ export class StartComponent implements OnInit {
   submit_edit() {
     this.edit_button = false;
 
-    
+
 
     /*
     const get_edit=<HTMLInputElement>document.getElementById('get_edit');
@@ -299,22 +301,23 @@ export class StartComponent implements OnInit {
     var comment = this.edit_comment;
     if (comment.length > 100) {
       alert('入力できるのは100文字までです');
+    } else {
+
+      this.commentService.putComment(com_id, user_id, comment)
+        .subscribe();
+
+
+      var cominfo_length = this.com_info.length;
+
+      for (let i = 0; i < cominfo_length; i++) {
+        if (com_id == this.com_info[i].com_id) {
+          this.com_info[i].comment = comment;
+
+        }
+      }
     };
 
-    this.commentService.putComment(com_id, user_id, comment)
-      .subscribe();
 
-
-    var cominfo_length = this.com_info.length;
-
-    for (let i = 0; i < cominfo_length; i++) {
-      if (com_id == this.com_info[i].com_id) {
-        this.com_info[i].comment = comment;
-
-      }
-    }
-
-    
 
 
 
