@@ -314,7 +314,7 @@ table.com_table{
   margin: 0 auto;
   padding: 0;
   width: 100vw;
-  table-layout: fixed;
+  /*table-layout: fixed;*/
   color: #4CAF50;
 }
 
