@@ -287,16 +287,8 @@ table.edit_table tr:last-child {
   border-bottom: 2px solid #18521b;
 }
 
-table.edit_table th,table.edit_table td{
-  position: sticky;
-  top: 0px;
 
-}
 
-.edit_table{
-  position: sticky;
-  top: 0px;
-}
 
 table.edit_table th,
 table.com_table td {

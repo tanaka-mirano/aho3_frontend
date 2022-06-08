@@ -266,10 +266,13 @@ export class StartComponent implements OnInit {
       this.edit_button = true;
       this.edit_comment = comment;
       this.edit_com_id = com_id;
+      scrollTo(0, 0);
 
     } else {
       alert('編集できるのは本人のみです');
     }
+
+    
 
 
   }
