@@ -352,6 +352,7 @@ td.table_comment{
 
 .table_name{
   font-size: 13px;
+  text-decoration: underline;
   
 }
 
@@ -372,6 +373,7 @@ td.table_comment{
 .table_name_p{
   font-size:15px;
   color:#ffffffce;
+  text-decoration: underline;
 }
 
 
