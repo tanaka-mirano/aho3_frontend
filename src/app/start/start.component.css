@@ -295,6 +295,10 @@ table.edit_table tr:last-child {
   border-bottom: 2px solid #18521b;
 }
 
+table.edit_table td{
+  text-align:center;
+}
+
 
 
 
