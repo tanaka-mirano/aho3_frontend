@@ -45,7 +45,7 @@
                     <button *ngIf="!reply_button && !edit_button" class="submit" (click)="submit_userinfo()">送信</button>
                     <button *ngIf="edit_button" class="update" (click)="submit_edit()">更新</button>
                     <button *ngIf="reply_button" class="submit_reply" (click)="submit_reply()">返信</button>
-                    <br>
+                    <br><br>
                     <button *ngIf="reply_button || edit_button" class="back_newarea"
                         (click)="back_newarea()">新規投稿フォームへ</button>
                 </td>
