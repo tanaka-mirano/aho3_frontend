@@ -61,34 +61,19 @@
         <table class="com_table">
             <tr>
                 <th>Comment</th>
-                <!--
-                <th>User</th>
-                -->
-                <!--
-                <th>Date</th>
-                -->
+                
             </tr>
 
             <!--返信表示ボタン押下時：親コメントの表示-->
             <tr class="parent_com" *ngIf="reply_com_btn">
-                <td><span class="table_name_p">{{parent_info.user_name}}</span><br>{{parent_info.comment}}<span class="updated_at_p">{{parent_info.updated_at}}</span></td>
-                <!--
-                <td align="center">{{parent_info.user_name}}<br></td>
-                -->
-                <!--
-                <td align="center">{{parent_info.updated_at}}</td>
-                -->
+                <td><span class="table_name_p">{{parent_info.user_name}}</span><br>{{parent_info.comment}}<br><span class="updated_at_p">{{parent_info.updated_at}}</span></td>
+                
                 <td></td>
             </tr>
 
             <tr *ngFor="let comment of com_info">
                 <td class="table_comment"><span class="table_name">{{comment.user_name}}</span><br>{{comment.comment}}<br><span class="updated_at">{{comment.updated_at}}</span></td>
-                <!--
-                <td align="center" class="table_name">{{comment.user_name}}</td>
-                -->
-                <!--
-                <td align="center" class="table_time">{{comment.updated_at}}</td>
-                -->
+                
 
                 <td>
                     <!--評価ボタン-->
