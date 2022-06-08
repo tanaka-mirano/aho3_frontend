@@ -1,6 +1,7 @@
 body{
   width: 100vw;
-  display:inline-block
+  display:inline-block;
+  position: absolute;
   }
 
 .title {
@@ -74,7 +75,7 @@ ul .message {
   border: none;
   background: transparent;
   color: #8BC34A;
-  font-size: 10px;
+  font-size: 15px;
   font-weight:  bold;
 }
 
@@ -83,7 +84,7 @@ ul .message {
   color: #ffafe4ce;
   border: none;
   background: transparent;
-  font-size: 10px;
+  font-size: 15px;
   font-weight:  bold;
 
 }
