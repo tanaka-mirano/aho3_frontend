@@ -8,7 +8,7 @@ body{
 
   font-family: "游ゴシック体", "YuGothic";
   text-align: center;
-  position: absolute;
+  position: relative;
   top: 10%;
   left: 50%;
   margin-right: -50%;
