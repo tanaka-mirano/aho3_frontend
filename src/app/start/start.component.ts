@@ -240,8 +240,10 @@ export class StartComponent implements OnInit {
       if (com_id == this.com_info[i].com_id) {
         if (this.com_info[i].push_b == false) {
           this.com_info[i].push_b = true;
+          this.com_info[i].good_num++;
         } else {
           this.com_info[i].push_b = false;
+          this.com_info[i].good_num--;
         }
 
       }
