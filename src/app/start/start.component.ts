@@ -169,7 +169,7 @@ export class StartComponent implements OnInit {
       });
 
 
-  
+
     window.location.reload();
 
   }
@@ -207,13 +207,15 @@ export class StartComponent implements OnInit {
     this.commentService.postreplyComment(user_name, user_id, comment, parent_id)
       .subscribe();
 
-   
+    var cominfo_length = this.com_info.length;
 
-    this.commentService.getComment(user_id)
-      .subscribe(com_info => {  //返ってきたものcom_infoでこれから処理するよ
-        this.com_info = com_info; //インターフェースの配列に返ってきた値いれるよ
+    for (let i = 0; i < cominfo_length; i++) {
+      if (parent_id == this.com_info[i].com_id) {
+        this.com_info[i].rep_com = true;
+      }
+    }
 
-      });
+
 
 
   }
@@ -230,6 +232,20 @@ export class StartComponent implements OnInit {
 
     this.commentService.postLike(com_id, user_id, push_b)
       .subscribe();
+
+    var cominfo_length = this.com_info.length;
+
+
+    for (let i = 0; i < cominfo_length; i++) {
+      if (com_id == this.com_info[i].com_id) {
+        if (this.com_info[i].push_b == false) {
+          this.com_info[i].push_b = true;
+        } else {
+          this.com_info[i].push_b = false;
+        }
+
+      }
+    }
 
 
   }
@@ -280,19 +296,19 @@ export class StartComponent implements OnInit {
       .subscribe();
 
 
-      var cominfo_length = this.com_info.length;
+    var cominfo_length = this.com_info.length;
 
-        for (let i = 0; i < cominfo_length; i++) {
-          if (com_id == this.com_info[i].com_id) {
-            this.com_info[i].comment=comment;                 
-            
-          }
-        }
+    for (let i = 0; i < cominfo_length; i++) {
+      if (com_id == this.com_info[i].com_id) {
+        this.com_info[i].comment = comment;
+
+      }
+    }
 
 
 
-      //window.location.reload();
-    
+    //window.location.reload();
+
 
   }
 
