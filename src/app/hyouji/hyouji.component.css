@@ -61,7 +61,7 @@ body {
   font-size: 100px;
   position: absolute;
   margin-top: 200px;
-  margin-left: 130px;
+  margin-left: 150px;
   color: rgb(248, 235, 54);
   font-weight: bold;
   /* 太文字にする */
@@ -98,7 +98,7 @@ body {
   position: absolute;
   top: 50%;
   /*50%だと親要素の中心に上端が来る。（transformを使用するとずれたため40%）ここをmargin-topにすると親要素の下に来る*/
-  left: 30%;
+  left: 25%;
   /*50%だと親要素の中心に左端が来る*/
   transform: translate(-50%, -50%);
   margin-top: 400px;
