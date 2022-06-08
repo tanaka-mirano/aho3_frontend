@@ -348,8 +348,9 @@ td.table_comment{
 
 }
 
-.table_name{
+td.table_name{
   font-size: 15px;
+  width:80px
 }
 
 .table_time{
