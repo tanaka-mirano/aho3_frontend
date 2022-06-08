@@ -321,7 +321,7 @@ table.com_table tr:last-child {
 
 table.com_table th,
 table.com_table td {
-  padding: 1em 10px 1em 1em;
+  padding: 1em 10px;
 }
 
 tbody th {
