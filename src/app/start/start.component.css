@@ -339,3 +339,7 @@ table.com_table tr.parent_com {
 .table_comment{
   font-size: 10px;
 }
+
+.table_name{
+  font-size: 20px;
+}
