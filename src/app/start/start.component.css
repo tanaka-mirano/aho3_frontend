@@ -293,6 +293,11 @@ table.edit_table th,table.edit_table td{
 
 }
 
+.edit_table{
+  position: sticky;
+  top: 0px;
+}
+
 table.edit_table th,
 table.com_table td {
   padding: 1em 10px 1em 1em;
