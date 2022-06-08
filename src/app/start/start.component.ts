@@ -64,7 +64,6 @@ export class StartComponent implements OnInit {
   edit_button = false;
   delete_com = false;
   reply_com_btn = false;  //返信コメントを表示するかしないか
-  done_com = false;  //投稿完了したか
 
   com_length = 0;  //文字数
 
@@ -79,7 +78,7 @@ export class StartComponent implements OnInit {
 
   grandparent_arr: any[] = [];
 
-  done = "";
+ 
 
 
   ngOnInit(): void {
@@ -149,9 +148,9 @@ export class StartComponent implements OnInit {
 
   /**コメント新規投稿 */
   submit_userinfo() {
-    //alert('投稿完了');
+    
 
-    if (this.com_length > 100) {
+    if (this.user_info.comment.length > 100) {
       alert('入力できるのは100文字までです');
     };
 
@@ -194,7 +193,7 @@ export class StartComponent implements OnInit {
 
     //alert('返信完了');
 
-    if (this.com_length > 100) {
+    if (this.user_info.comment.length > 100) {
       alert('入力できるのは100文字までです');
     };
 
@@ -283,9 +282,7 @@ export class StartComponent implements OnInit {
   submit_edit() {
     this.edit_button = false;
 
-    if (this.com_length > 100) {
-      alert('入力できるのは100文字までです');
-    };
+    
 
     /*
     const get_edit=<HTMLInputElement>document.getElementById('get_edit');
@@ -300,6 +297,9 @@ export class StartComponent implements OnInit {
     //var user_id = "apple";
 
     var comment = this.edit_comment;
+    if (comment.length > 100) {
+      alert('入力できるのは100文字までです');
+    };
 
     this.commentService.putComment(com_id, user_id, comment)
       .subscribe();
@@ -435,9 +435,6 @@ export class StartComponent implements OnInit {
     this.reply_button = false;
   }
 
-  done_edit(): void {
-    this.done_com = false;
-  }
 
 }
 //////////////////////////////////////////////////////////////////////////////
