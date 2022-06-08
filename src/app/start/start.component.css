@@ -268,7 +268,8 @@ textarea {
 
 /*入力欄*/
 table.edit_table{
-  position: fixed;
+  position: sticky;
+  top: 0;
   border-collapse: collapse;
   margin: 0 auto;
   padding: 0;
