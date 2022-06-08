@@ -64,7 +64,7 @@
 
         <table class="com_table">
             <tr>
-                <th class="table_comment">Comment</th>
+                <th>Comment</th>
                 <th>User</th>
                 <th>Date</th>
             </tr>
@@ -78,7 +78,7 @@
             </tr>
 
             <tr *ngFor="let comment of com_info">
-                <td>{{comment.comment}}</td>
+                <td class="table_comment">{{comment.comment}}</td>
                 <td align="center">{{comment.user_name}}</td>
                 <td align="center">{{comment.updated_at}}</td>
 
