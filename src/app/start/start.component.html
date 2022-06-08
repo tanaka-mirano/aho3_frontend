@@ -74,7 +74,7 @@
             <!--返信表示ボタン押下時：親コメントの表示-->
             <tr class="parent_com" *ngIf="reply_com_btn">
                 <td>{{parent_info.comment}}</td>
-                <td align="center">{{parent_info.user_name}}</td>
+                <td align="center">{{parent_info.user_name}}<br><span class="updated_at">{{parent_info.updated_at}}</span></td>
                 <!--
                 <td align="center">{{parent_info.updated_at}}</td>
                 -->

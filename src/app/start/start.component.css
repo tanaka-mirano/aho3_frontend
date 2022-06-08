@@ -304,6 +304,8 @@ tbody th {
 table.edit_table tr.parent_com {
   background-color: #8BC34A;
   color: #fff;
+  position:sticky;
+  top:0;
 }
 
 
@@ -361,3 +363,5 @@ td.table_name{
   font-size:8px;
   color:#b1b1b1ce;
 }
+
+
