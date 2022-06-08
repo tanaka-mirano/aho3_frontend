@@ -183,6 +183,8 @@ export class StartComponent implements OnInit {
     }
     this.reply_button = true;
     this.reply_com_id = com_id;
+
+    scrollTo(0, 0);
   }
 
   /**コメント返信実行 */
