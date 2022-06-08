@@ -108,6 +108,7 @@ ul .message {
 .comment {
 
   position: relative;
+  width: 100vw;
   /*left: 40%;*/
   /*
     float:right;
