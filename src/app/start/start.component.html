@@ -64,7 +64,7 @@
 
         <table class="com_table">
             <tr>
-                <th>Comment</th>
+                <th class="table_comment">Comment</th>
                 <th>User</th>
                 <th>Date</th>
             </tr>
@@ -98,7 +98,7 @@
                     <button *ngIf="comment.rep_com==true" class="appear_rep"
                         (click)="appear_rep(comment.com_id,comment.comment,comment.user_name,comment.updated_at)">コメント</button>
 
-                    <button *ngIf="comment.rep_com==false" class="none">-----------------</button>
+                    <button *ngIf="comment.rep_com==false" class="none">---------------</button>
 
                     <!--削除ボタン-->
                     <button class="delete" (click)="delete(comment.com_id,comment.user_id)">×</button>
