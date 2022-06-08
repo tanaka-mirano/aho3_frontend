@@ -197,6 +197,7 @@ textarea {
   color: #8BC34A;
   text-decoration: underline;
   float:right;
+  font-size:10px;
 }
 
 /*削除ボタン*/
