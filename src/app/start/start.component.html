@@ -87,7 +87,7 @@
                     <button class="reply" (click)="reply(comment.com_id)">返信</button>
 
                     <!--編集ボタン-->
-                    <button class="edit_com"
+                    <button class="edit_com" *ngIf="comment.user_id==user_info.user_id"
                         (click)="edit_com(comment.comment,comment.com_id,comment.user_id)">編集</button>
 
                     <!--返信コメント表示ボタン：返信コメントがあるとき-->
@@ -97,7 +97,7 @@
                     <button *ngIf="comment.rep_com==false" class="none">---------------</button>
 
                     <!--削除ボタン-->
-                    <button class="delete" (click)="delete(comment.com_id,comment.user_id)">×</button>
+                    <button class="delete" *ngIf="comment.user_id==user_info.user_id" (click)="delete(comment.com_id,comment.user_id)">×</button>
 
 
                 </td>
